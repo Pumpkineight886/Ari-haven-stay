@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HavenStay</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index1.html">
+        <img class="logo" src="assets/havenstay-logo-removebg.png" alt="" />
+      </a>
+
+      <div class="nav-actions">
+        <a href="" class="signin">Sign In</a>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index1.html">Home</a></li>
+        <li><a href="">Rooms</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Dining</a></li>
+        <li><a href="">Wellness</a></li>
+        <li><a href="">Meetings &amp; Events</a></li>
+        <li><a href="">Gallery</a></li>
+      </ul>
+    </nav>
+
+    <div class="search-box">
+      <div class="input-group">
+        <span>
+          <svg
+            class="hs-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 21s7-7.2 7-12a7 7 0 1 0-14 0c0 4.8 7 12 7 12z"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linejoin="round"
+            />
+            <circle
+              cx="12"
+              cy="9"
+              r="2.4"
+              stroke="currentColor"
+              stroke-width="1.6"
+            />
+          </svg>
+        </span>
+        <input type="text" placeholder="Search destination or hotel" />
+      </div>
+
+      <div class="input-group">
+        <span>
+          <svg
+            class="hs-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="3.5"
+              y="5.5"
+              width="17"
+              height="15"
+              rx="2"
+              stroke="currentColor"
+              stroke-width="1.6"
+            />
+            <path d="M3.5 9.5h17" stroke="currentColor" stroke-width="1.6" />
+            <path
+              d="M8 3v4M16 3v4"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+            />
+          </svg>
+        </span>
+        <input type="date" />
+      </div>
+
+      <div class="input-group">
+        <span>
+          <svg
+            class="hs-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              stroke-width="1.6"
+            />
+            <path
+              d="M12 6v5l4 2"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+        <input type="date" />
+      </div>
+
+      <button>Find Hotels</button>
+    </div>
+
+    <section class="hero">
+      <div class="hero-overlay">
+        <h1 class="hero-title">Your Next Somewhere</h1>
+        <p class="hero-subtitle">
+          Discover refined stays, curated for the way you travel.
+        </p>
+        <a href="rooms.html" class="hero-cta">Explore Rooms</a>
+      </div>
+    </section>
+
+    <section class="explore">
+      <div class="explore-tabs">
+        <button class="tab active" data-category="poolside">Poolside</button>
+        <button class="tab" data-category="exclusives">
+          Member Exclusives
+        </button>
+        <button class="tab" data-category="dining">Dining</button>
+        <button class="tab" data-category="wellness">Wellness</button>
+      </div>
+
+      <div class="feature-cards" id="featureCards">
+        <!-- injected by JS -->
+      </div>
+    </section>
+
+    <section class="highlights">
+      <div
+        class="highlight-card"
+        style="background-image: url(&quot;assets/room-3.jpg&quot;)"
+      >
+        <div class="highlight-arrow">&rarr;</div>
+        <div class="highlight-content">
+          <span class="highlight-tag">Rooms &amp; Suites</span>
+          <h3>Spaces designed to slow you down</h3>
+          <a href="rooms.html" class="highlight-link"
+            >Explore Rooms <span>&rarr;</span></a
+          >
+        </div>
+      </div>
+
+      <div
+        class="highlight-card"
+        style="background-image: url(&quot;assets/dining-3.jpg&quot;)"
+      >
+        <div class="highlight-arrow">&rarr;</div>
+        <div class="highlight-content">
+          <span class="highlight-tag">Dining</span>
+          <h3>Flavors sourced from every stay</h3>
+          <a href="dining.html" class="highlight-link"
+            >View Restaurants <span>&rarr;</span></a
+          >
+        </div>
+      </div>
+
+      <div
+        class="highlight-card"
+        style="background-image: url(&quot;assets/wellness-3.webp&quot;)"
+      >
+        <div class="highlight-arrow">&rarr;</div>
+        <div class="highlight-content">
+          <span class="highlight-tag">Wellness</span>
+          <h3>Restore, recover, return to yourself</h3>
+          <a href="wellness.html" class="highlight-link"
+            >Discover Wellness <span>&rarr;</span></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="offers">
+      <div class="offers-header">
+        <div>
+          <h2>Get Away, Get More</h2>
+          <p>
+            Celebrate longer days with savings on hotels, experiences, and more.
+          </p>
+        </div>
+        <a href="offers.html" class="view-more"
+          >View More <span>&rarr;</span></a
+        >
+      </div>
+
+      <div class="offers-slider">
+        <button
+          class="slider-arrow prev"
+          id="prevArrow"
+          aria-label="Previous offers"
+        >
+          &larr;
+        </button>
+
+        <div class="offers-track-wrap">
+          <div class="offers-track" id="offersTrack">
+            <!-- injected by JS -->
+          </div>
+        </div>
+
+        <button
+          class="slider-arrow next"
+          id="nextArrow"
+          aria-label="Next offers"
+        >
+          &rarr;
+        </button>
+      </div>
+
+      <div class="offers-dots" id="offersDots"></div>
+    </section>
+
+    <section class="partners">
+      <h2>Hotels We've Worked With</h2>
+      <div class="partners-grid">
+        <div class="partner-logo">
+          <img
+            src="assets/havenstay-logo-removebg.png"
+            alt="Partner hotel logo"
+          />
+        </div>
+        <div class="partner-logo">
+          <img
+            src="assets/havenstay-logo-removebg.png"
+            alt="Partner hotel logo"
+          />
+        </div>
+        <div class="partner-logo">
+          <img
+            src="assets/havenstay-logo-removebg.png"
+            alt="Partner hotel logo"
+          />
+        </div>
+        <div class="partner-logo">
+          <img
+            src="assets/havenstay-logo-removebg.png"
+            alt="Partner hotel logo"
+          />
+        </div>
+        <div class="partner-logo">
+          <img
+            src="assets/havenstay-logo-removebg.png"
+            alt="Partner hotel logo"
+          />
+        </div>
+        <div class="partner-logo">
+          <img
+            src="assets/havenstay-logo-removebg.png"
+            alt="Partner hotel logo"
+          />
+        </div>
+        <div class="partner-logo">
+          <img
+            src="assets/havenstay-logo-removebg.png"
+            alt="Partner hotel logo"
+          />
+        </div>
+        <div class="partner-logo">
+          <img
+            src="assets/havenstay-logo-removebg.png"
+            alt="Partner hotel logo"
+          />
+        </div>
+        <div class="partner-logo">
+          <img
+            src="assets/havenstay-logo-removebg.png"
+            alt="Partner hotel logo"
+          />
+        </div>
+        <div class="partner-logo">
+          <img
+            src="assets/havenstay-logo-removebg.png"
+            alt="Partner hotel logo"
+          />
+        </div>
+        <div class="partner-logo">
+          <img
+            src="assets/havenstay-logo-removebg.png"
+            alt="Partner hotel logo"
+          />
+        </div>
+        <div class="partner-logo">
+          <img
+            src="assets/havenstay-logo-removebg.png"
+            alt="Partner hotel logo"
+          />
+        </div>
+        <div class="partner-logo">
+          <img
+            src="assets/havenstay-logo-removebg.png"
+            alt="Partner hotel logo"
+          />
+        </div>
+        <div class="partner-logo">
+          <img
+            src="assets/havenstay-logo-removebg.png"
+            alt="Partner hotel logo"
+          />
+        </div>
+        <div class="partner-logo">
+          <img
+            src="assets/havenstay-logo-removebg.png"
+            alt="Partner hotel logo"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="promo">
+      <div class="promo-card">
+        <!-- Left Side: Content -->
+        <div class="promo-content">
+          <h2>The Best Rates Are<br />Always Here</h2>
+          <p>
+            Get the best prices plus free Wi-Fi when you<br />become a hotel
+            rewards member.
+          </p>
+          <div class="promo-actions">
+            <a href="#" class="btn btn-dark">Join for Free</a>
+            <a href="#" class="btn btn-outline">Sign In</a>
+          </div>
+        </div>
+
+        <!-- Right Side: Features Grid -->
+        <div class="promo-features">
+          <!-- Feature 1 -->
+          <div class="feature-item border-right border-bottom">
+            <svg
+              class="feature-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg>
+            <span>Best Rate<br />Guarantee</span>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-item border-bottom">
+            <svg
+              class="feature-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M2 19v-5c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v5" />
+              <path d="M2 17h20" />
+              <rect x="4" y="9" width="6" height="5" rx="1" />
+              <path d="M16 4l1 2 2 1-2 1-1 2-1-2-2-1 2-1 1-2z" />
+            </svg>
+            <span>Earn Free<br />Nights</span>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-item border-right">
+            <svg
+              class="feature-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M5 12.55a11 11 0 0114.08 0" />
+              <path d="M1.42 9a16 16 0 0121.16 0" />
+              <path d="M8.53 16.11a6 6 0 016.95 0" />
+              <line
+                x1="12"
+                y1="20"
+                x2="12.01"
+                y2="20"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+            <span>Free Wi-Fi</span>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-item">
+            <svg
+              class="feature-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path
+                d="M20.59 13.41l-7.17 7.17a2 2 0 01-2.83 0L2 12V2h10l8.59 8.59a2 2 0 010 2.82z"
+              />
+              <line
+                x1="7"
+                y1="7"
+                x2="7.01"
+                y2="7"
+                stroke-width="2"
+                stroke-linecap="round"
+              />
+            </svg>
+            <span>Member<br />Rates</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+      const toggleIcon = menuToggle?.querySelector('i');
+
+      if (menuToggle && navLinks && toggleIcon) {
+        menuToggle.addEventListener('click', () => {
+          const isOpen = navLinks.classList.toggle('open');
+          menuToggle.setAttribute('aria-expanded', String(isOpen));
+          toggleIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+        });
+
+        navLinks.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            toggleIcon.className = 'fa-solid fa-bars';
+          });
+        });
+
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 900) {
+            navLinks.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            toggleIcon.className = 'fa-solid fa-bars';
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

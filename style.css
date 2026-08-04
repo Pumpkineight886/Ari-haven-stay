@@ -1,0 +1,120 @@
+:root {
+    --hs-navy: #0B2545;
+    --hs-navy-light: #13315c;
+    --hs-gold: #C9A24B;
+    --hs-cream: #F7F4EE;
+  }
+
+  .hs-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+    background: var(--hs-navy);
+    font-family: 'Georgia', 'Times New Roman', serif;
+  }
+
+  .hs-navbar__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 18px 32px;
+  }
+
+  .hs-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    margin-right: auto;
+  }
+
+  .hs-logo__mark { height: 34px; width: 80px; }
+
+  .hs-logo__text {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .hs-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .hs-nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, opacity 0.2s ease;
+    opacity: 0.9;
+  }
+
+  .hs-nav-links a:hover,
+  .hs-nav-links a:focus-visible {
+    opacity: 1;
+    border-bottom-color: var(--hs-gold);
+  }
+
+  .hs-nav-links a.active {
+    opacity: 1;
+    border-bottom-color: var(--hs-gold);
+  }
+
+  .hs-signin {
+    display: inline-flex;
+    align-items: center;
+    color: var(--hs-navy);
+    background: var(--hs-gold);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 10px 22px;
+    border-radius: 999px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .hs-signin:hover,
+  .hs-signin:focus-visible {
+    background: #dab661;
+    transform: translateY(-1px);
+  }
+
+  .hs-nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 30px;
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .hs-nav-toggle span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background: #fff;
+  }
+
+  @media (max-width: 900px) {
+    .hs-nav-links,
+    .hs-signin { display: none; }
+    .hs-nav-toggle { display: flex; }
+    .hs-navbar__inner { padding: 16px 20px; }
+  }
