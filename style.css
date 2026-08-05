@@ -5,7 +5,7 @@
     --hs-cream: #F7F4EE;
   }
 
-  .hs-navbar {
+  .ari-hs-navbar {
     position: absolute;
     top: 0;
     left: 0;
@@ -15,7 +15,7 @@
     font-family: 'Georgia', 'Times New Roman', serif;
   }
 
-  .hs-navbar__inner {
+  .ari-hs-navbar__inner {
     max-width: 1280px;
     margin: 0 auto;
     display: flex;
@@ -24,7 +24,7 @@
     padding: 18px 32px;
   }
 
-  .hs-logo {
+  .ari-hs-logo {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -32,16 +32,16 @@
     margin-right: auto;
   }
 
-  .hs-logo__mark { height: 34px; width: 80px; }
+  .ari-hs-logo__mark { height: 34px; width: 80px; }
 
-  .hs-logo__text {
+  .ari-hs-logo__text {
     color: #fff;
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 0.5px;
   }
 
-  .hs-nav-links {
+  .ari-hs-nav-links {
     display: flex;
     align-items: center;
     gap: 28px;
@@ -50,7 +50,7 @@
     padding: 0;
   }
 
-  .hs-nav-links a {
+  .ari-hs-nav-links a {
     color: #fff;
     text-decoration: none;
     font-size: 15px;
@@ -61,18 +61,18 @@
     opacity: 0.9;
   }
 
-  .hs-nav-links a:hover,
-  .hs-nav-links a:focus-visible {
+  .ari-hs-nav-links a:hover,
+  .ari-hs-nav-links a:focus-visible {
     opacity: 1;
     border-bottom-color: var(--hs-gold);
   }
 
-  .hs-nav-links a.active {
+  .ari-hs-nav-links a.ari-active {
     opacity: 1;
     border-bottom-color: var(--hs-gold);
   }
 
-  .hs-signin {
+  .ari-hs-signin {
     display: inline-flex;
     align-items: center;
     color: var(--hs-navy);
@@ -86,13 +86,13 @@
     white-space: nowrap;
   }
 
-  .hs-signin:hover,
-  .hs-signin:focus-visible {
+  .ari-hs-signin:hover,
+  .ari-hs-signin:focus-visible {
     background: #dab661;
     transform: translateY(-1px);
   }
 
-  .hs-nav-toggle {
+  .ari-hs-nav-toggle {
     display: none;
     flex-direction: column;
     justify-content: center;
@@ -105,7 +105,7 @@
     padding: 0;
   }
 
-  .hs-nav-toggle span {
+  .ari-hs-nav-toggle span {
     display: block;
     height: 2px;
     width: 100%;
@@ -113,8 +113,8 @@
   }
 
   @media (max-width: 900px) {
-    .hs-nav-links,
-    .hs-signin { display: none; }
-    .hs-nav-toggle { display: flex; }
-    .hs-navbar__inner { padding: 16px 20px; }
+    .ari-hs-nav-links,
+    .ari-hs-signin { display: none; }
+    .ari-hs-nav-toggle { display: flex; }
+    .ari-hs-navbar__inner { padding: 16px 20px; }
   }

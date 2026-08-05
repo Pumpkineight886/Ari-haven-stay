@@ -148,3 +148,210 @@ window.addEventListener("resize", updateSlider);
 
 renderOffers();
 updateSlider();
+
+// Hamburger Menu
+const menuToggle = document.getElementById('menu-toggle');
+      const navLinks = document.getElementById('nav-links');
+      const toggleIcon = menuToggle?.querySelector('i');
+
+      if (menuToggle && navLinks && toggleIcon) {
+        menuToggle.addEventListener('click', () => {
+          const isOpen = navLinks.classList.toggle('open');
+          menuToggle.setAttribute('aria-expanded', String(isOpen));
+          toggleIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+        });
+
+        navLinks.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            toggleIcon.className = 'fa-solid fa-bars';
+          });
+        });
+
+        window.addEventListener('resize', () => {
+          if (window.innerWidth > 900) {
+            navLinks.classList.remove('open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            toggleIcon.className = 'fa-solid fa-bars';
+          }
+        });
+      }
+
+// Returns the storage key for the currently logged in user
+/*function getCartKey() {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (!currentUser) {
+        return null;
+    }
+    return `hotelCart_${currentUser.email}`;
+}
+
+// Gets the current user's cart
+function getCart() {
+    const cartKey = getCartKey();
+    if (!cartKey) {
+        return [];
+    }
+    const data = localStorage.getItem(cartKey);
+    return data ? JSON.parse(data) : [];
+}
+
+// Saves the current user's cart
+function saveCart(cart) {
+    const cartKey = getCartKey();
+    if (!cartKey) {
+        return;
+    }
+    localStorage.setItem(cartKey, JSON.stringify(cart));
+}
+
+/* ------------------------------------------------------------
+   2. SMALL HELPER FUNCTIONS
+   ------------------------------------------------------------ */
+
+// Turns two date strings into a number of nights.
+/*function calculateNights(checkIn, checkOut) {
+  const start = new Date(checkIn);
+  const end = new Date(checkOut);
+  const oneDay = 1000 * 60 * 60 * 24; // milliseconds in a day
+  const nights = Math.round((end - start) / oneDay);
+  return nights > 0 ? nights : 0;
+}
+
+// Formats a number as Naira, e.g. 45000 -> "₦45,000"
+function formatPrice(amount) {
+  return "₦" + Number(amount).toLocaleString("en-NG");
+}
+
+// Shows a short popup message at the bottom of the screen.
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), 2500);
+}
+
+// Updates the little number next to "Cart" in the navbar.
+/*function updateCartCount() {
+    const cartCountEl = document.getElementById("cart-count");
+
+    if (!cartCountEl) return;
+
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (!currentUser) {
+        cartCountEl.style.display = "none";
+        return;
+    }
+    const count = getCart().length;
+    cartCountEl.style.display = count > 0 ? "inline-block" : "none";
+    cartCountEl.textContent = count;
+}*/
+
+/* ------------------------------------------------------------
+   3. ADD TO CART
+   ------------------------------------------------------------
+   Every room card has an "Add to Cart" button. The room's info
+   (id, name, price, image) is stored right on the button using
+   data-* attributes, so we can read it straight from the HTML
+   instead of looking it up in a separate array.
+   ------------------------------------------------------------ */
+function handleAddToCart(event) {
+  const button = event.target;
+  const roomId = button.dataset.id;
+  const roomName = button.dataset.name;
+  const roomPrice = Number(button.dataset.price);
+  const roomImage = button.dataset.image;
+
+  // The date inputs live in the same card as the button.
+  const card = button.closest(".room-card");
+  const checkIn = card.querySelector(".checkin-input").value;
+  const checkOut = card.querySelector(".checkout-input").value;
+  const isLoggedIn = localStorage.getItem("loggedIn");
+
+  if (isLoggedIn !== "true") {
+      alert("Please login before booking a room.");
+      window.location.href = "login.html";
+      return;
+  }
+
+  if (!checkIn || !checkOut) {
+    showToast("Please choose a check-in and check-out date.");
+    return;
+  }
+
+  const nights = calculateNights(checkIn, checkOut);
+  if (nights <= 0) {
+    showToast("Check-out date must be after check-in date.");
+    return;
+  }
+
+  const cartItem = {
+    cartItemId: Date.now(), // a simple unique id for this cart entry
+    roomId,
+    name: roomName,
+    image: roomImage,
+    pricePerNight: roomPrice,
+    checkIn,
+    checkOut,
+    nights,
+    total: roomPrice * nights,
+  };
+
+  const cart = getCart();
+  cart.push(cartItem);
+  saveCart(cart);
+
+  updateCartCount();
+  showToast(`${roomName} added to cart! (${nights} night${nights > 1 ? "s" : ""})`);
+}
+
+/* ------------------------------------------------------------
+   4. FILTER BUTTONS (rooms.html only)
+   ------------------------------------------------------------
+   Each room card has a data-type attribute (e.g. "Suite"). To
+   filter, we just show or hide cards instead of rebuilding the
+   whole page with JavaScript.
+   ------------------------------------------------------------ */
+function setupFilters() {
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const roomCards = document.querySelectorAll("#rooms-container .room-card");
+  if (filterButtons.length === 0) return;
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      filterButtons.forEach((b) => b.classList.remove("active"));
+      button.classList.add("active");
+
+      const type = button.dataset.type; // e.g. "All", "Suite", "Family"
+
+      roomCards.forEach((card) => {
+        const matches = type === "All" || card.dataset.type === type;
+        card.style.display = matches ? "" : "none";
+      });
+    });
+  });
+}
+
+/* ------------------------------------------------------------
+   5. RUN ONCE THE PAGE HAS LOADED
+   ------------------------------------------------------------ */
+document.addEventListener("DOMContentLoaded", () => {
+  updateCartCount();
+
+  // Set the minimum date for all check-in and check-out inputs to today
+  const today = new Date().toISOString().split("T")[0];
+
+  document.querySelectorAll(".checkin-input, .checkout-input").forEach((input) => {
+    input.min = today;
+  });
+
+  // Attach the "Add to Cart" click event to every button that exists on this page.
+  document.querySelectorAll(".add-to-cart-btn").forEach((btn) => {
+    btn.addEventListener("click", handleAddToCart);
+  });
+
+  // Only rooms.html has filter buttons.
+  setupFilters();
+});

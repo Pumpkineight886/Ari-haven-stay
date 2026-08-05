@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="style1.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:wght@400;500;600&display=swap"
       rel="stylesheet"
@@ -16,15 +19,8 @@
   <body>
     <nav class="navbar">
       <a href="index1.html">
-        <img class="logo" src="assets/havenstay-logo-removebg.png" alt="" />
+        <img class="logo" src="assets/havenstay-logo-gold.png" alt="" />
       </a>
-
-      <div class="nav-actions">
-        <a href="" class="signin">Sign In</a>
-        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-      </div>
 
       <ul class="nav-links" id="nav-links">
         <li><a href="index1.html">Home</a></li>
@@ -35,6 +31,34 @@
         <li><a href="">Meetings &amp; Events</a></li>
         <li><a href="">Gallery</a></li>
       </ul>
+
+      <div class="nav-actions">
+        <!-- Visible before login -->
+        <div id="guest-links" class="nav-group">
+          <a href="auth.html" class="auth-link"> Sign In </a>
+        </div>
+
+        <!-- Visible after login -->
+        <div id="user-links" class="nav-group hidden">
+          <span id="welcome-user" class="welcome-user">
+            <i class="fa-solid fa-user"></i>
+          </span>
+          <a href="cart.html" class="cart-link">
+            Bookings
+            <span id="cart-count">0</span>
+          </a>
+
+          <a href="#" id="logout-btn">Logout</a>
+        </div>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </nav>
 
     <div class="search-box">
@@ -236,94 +260,49 @@
       <h2>Hotels We've Worked With</h2>
       <div class="partners-grid">
         <div class="partner-logo">
-          <img
-            src="assets/havenstay-logo-removebg.png"
-            alt="Partner hotel logo"
-          />
+          <img src="assets/logo-1.svg" alt="Partner hotel logo" />
         </div>
         <div class="partner-logo">
-          <img
-            src="assets/havenstay-logo-removebg.png"
-            alt="Partner hotel logo"
-          />
+          <img src="assets/logo-2.svg" alt="Partner hotel logo" />
         </div>
         <div class="partner-logo">
-          <img
-            src="assets/havenstay-logo-removebg.png"
-            alt="Partner hotel logo"
-          />
+          <img src="assets/logo-3.svg" alt="Partner hotel logo" />
         </div>
         <div class="partner-logo">
-          <img
-            src="assets/havenstay-logo-removebg.png"
-            alt="Partner hotel logo"
-          />
+          <img src="assets/logo-4" alt="Partner hotel logo" />
         </div>
         <div class="partner-logo">
-          <img
-            src="assets/havenstay-logo-removebg.png"
-            alt="Partner hotel logo"
-          />
+          <img src="assets/logo-5" alt="Partner hotel logo" />
         </div>
         <div class="partner-logo">
-          <img
-            src="assets/havenstay-logo-removebg.png"
-            alt="Partner hotel logo"
-          />
+          <img src="assets/logo-6" alt="Partner hotel logo" />
         </div>
         <div class="partner-logo">
-          <img
-            src="assets/havenstay-logo-removebg.png"
-            alt="Partner hotel logo"
-          />
+          <img src="assets/logo-7.svg" alt="Partner hotel logo" />
         </div>
         <div class="partner-logo">
-          <img
-            src="assets/havenstay-logo-removebg.png"
-            alt="Partner hotel logo"
-          />
+          <img src="assets/logo-8" alt="Partner hotel logo" />
         </div>
         <div class="partner-logo">
-          <img
-            src="assets/havenstay-logo-removebg.png"
-            alt="Partner hotel logo"
-          />
+          <img src="assets/logo-9" alt="Partner hotel logo" />
         </div>
         <div class="partner-logo">
-          <img
-            src="assets/havenstay-logo-removebg.png"
-            alt="Partner hotel logo"
-          />
+          <img src="assets/logo-10.svg" alt="Partner hotel logo" />
         </div>
         <div class="partner-logo">
-          <img
-            src="assets/havenstay-logo-removebg.png"
-            alt="Partner hotel logo"
-          />
+          <img src="assets/logo-11.svg" alt="Partner hotel logo" />
         </div>
         <div class="partner-logo">
-          <img
-            src="assets/havenstay-logo-removebg.png"
-            alt="Partner hotel logo"
-          />
+          <img src="assets/logo-12.svg" alt="Partner hotel logo" />
         </div>
         <div class="partner-logo">
-          <img
-            src="assets/havenstay-logo-removebg.png"
-            alt="Partner hotel logo"
-          />
+          <img src="assets/logo-13.svg" alt="Partner hotel logo" />
         </div>
         <div class="partner-logo">
-          <img
-            src="assets/havenstay-logo-removebg.png"
-            alt="Partner hotel logo"
-          />
+          <img src="assets/logo-14.svg" alt="Partner hotel logo" />
         </div>
         <div class="partner-logo">
-          <img
-            src="assets/havenstay-logo-removebg.png"
-            alt="Partner hotel logo"
-          />
+          <img src="assets/logo-15.svg" alt="Partner hotel logo" />
         </div>
       </div>
     </section>
@@ -427,34 +406,121 @@
         </div>
       </div>
     </section>
-    <script>
-      const menuToggle = document.getElementById('menu-toggle');
-      const navLinks = document.getElementById('nav-links');
-      const toggleIcon = menuToggle?.querySelector('i');
 
-      if (menuToggle && navLinks && toggleIcon) {
-        menuToggle.addEventListener('click', () => {
-          const isOpen = navLinks.classList.toggle('open');
-          menuToggle.setAttribute('aria-expanded', String(isOpen));
-          toggleIcon.className = isOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
-        });
+    <section class="info-rows">
+      <div class="info-card">
+        <div class="info-card-image">
+          <img src="assets/havenstay-logo-removebg.png" alt="HavenStay mobile app" />
+        </div>
+        <div class="info-card-text">
+          <h3>Unlock effortless stays with the HavenStay app</h3>
+          <p>
+            Wherever you go, the app gives you easy access to everything you
+            need for your trip.
+          </p>
+        </div>
+        <a href="#" class="info-card-arrow" aria-label="Learn more">
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
 
-        navLinks.querySelectorAll('a').forEach((link) => {
-          link.addEventListener('click', () => {
-            navLinks.classList.remove('open');
-            menuToggle.setAttribute('aria-expanded', 'false');
-            toggleIcon.className = 'fa-solid fa-bars';
-          });
-        });
+      <div class="info-card">
+        <div class="info-card-image">
+          <img src="assets/staff-2.jpg" alt="Careers at HavenStay" />
+        </div>
+        <div class="info-card-text">
+          <h3>Discover Career Opportunities</h3>
+          <p>EOE / Disability / Veteran</p>
+        </div>
+        <a href="#" class="info-card-arrow" aria-label="Learn more">
+          <i class="fa-solid fa-chevron-right"></i>
+        </a>
+      </div>
+    </section>
 
-        window.addEventListener('resize', () => {
-          if (window.innerWidth > 900) {
-            navLinks.classList.remove('open');
-            menuToggle.setAttribute('aria-expanded', 'false');
-            toggleIcon.className = 'fa-solid fa-bars';
-          }
-        });
-      }
-    </script>
+    <section class="footer">
+      <footer class="site-footer">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <img
+              class="footer-logo"
+              src="assets/havenstay-logo-removebg.png"
+              alt="HavenStay"
+            />
+            <p class="footer-tagline">
+              Refined stays, curated for the way you travel.
+            </p>
+            <div class="footer-socials">
+              <a href="#" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="X"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="index1.html">Home</a></li>
+              <li><a href="">Rooms</a></li>
+              <li><a href="">Dining</a></li>
+              <li><a href="">Wellness</a></li>
+              <li><a href="">Gallery</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="">About Us</a></li>
+              <li><a href="">Meetings &amp; Events</a></li>
+              <li><a href="">Careers</a></li>
+              <li><a href="">Press</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="">Contact Us</a></li>
+              <li><a href="">FAQs</a></li>
+              <li><a href="">Cancellation Policy</a></li>
+              <li><a href="">Sign In / Join</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col footer-newsletter">
+            <h4>Stay in the Know</h4>
+            <p>Get offers and updates delivered straight to your inbox.</p>
+            <form class="newsletter-form" onsubmit="return false;">
+              <input type="email" placeholder="Enter your email" required />
+              <button type="submit" aria-label="Subscribe">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 HavenStay. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="">Privacy Policy</a>
+            <a href="">Terms of Service</a>
+            <a href="">Sitemap</a>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <script src="utils.js"></script>
+    <script src="script1.js"></script>
+    
   </body>
 </html>

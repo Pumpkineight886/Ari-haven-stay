@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HavenStay</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index1.html">
+        <img class="logo" src="assets/havenstay-logo-removebg.png" alt="" />
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index1.html">Home</a></li>
+        <li><a href="">Rooms</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Dining</a></li>
+        <li><a href="">Wellness</a></li>
+        <li><a href="">Meetings &amp; Events</a></li>
+        <li><a href="">Gallery</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Visible before login -->
+        <div id="guest-links" class="nav-group">
+          <a href="auth.html" class="auth-link"> Sign In </a>
+        </div>
+
+        <!-- Visible after login -->
+        <div id="user-links" class="nav-group hidden">
+          <span id="welcome-user" class="welcome-user">
+            <i class="fa-solid fa-user"></i>
+          </span>
+          <a href="cart.html" class="cart-link">
+            Bookings
+            <span id="cart-count">0</span>
+          </a>
+
+          <a href="#" id="logout-btn">Logout</a>
+        </div>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+<br><br><br>
+        <section class="auth-section">
+            <div class="auth-container">
+                <div class="auth-content">
+                    <div id="login-panel">
+                        <!-- EVERYTHING YOU CURRENTLY HAVE
+                            (section-title + form)
+                            GOES HERE -->
+                        <div class="section-title">
+                            <h2>Welcome Back</h2>
+                            <p class="auth-subtitle">
+                                Sign in to continue your luxury experience.
+                            </p>
+                        </div>
+
+                        <form class="contact-form auth-form" id="login-form">
+
+                            <div class="form-group">
+                                <label for="login-email">
+                                    Email Address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="login-email"
+                                    placeholder="Enter your email"
+                                >
+
+                                <span class="form-error" id="login-email-error">
+                                    Please enter a valid email.
+                                </span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="login-password">
+                                    Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="login-password"
+                                    placeholder="Enter your password"
+                                >
+
+                                <span class="form-error" id="login-password-error">
+                                    Please enter your password.
+                                </span>
+                            </div>
+
+                            <button class="btn auth-btn" type="submit">
+                                Sign In
+                            </button>
+
+                            <p class="auth-switch">
+                                Don't have an account?
+                                <a href="#" id="show-register-form" class="auth-link">
+                                    Create one
+                                </a>
+                            </p>
+                        </form>
+                    </div>
+
+                    <!-- REGISTER FORM -->
+
+                    <div id="register-panel">
+                        <div class="section-title">
+                            <h2>Create Your Account</h2>
+                            <p class="auth-subtitle">
+                                Join Haven Stay and start booking your perfect stay.
+                            </p>
+                        </div>
+                        <form class="contact-form auth-form" id="register-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="register-name">
+                                        Full Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="register-name"
+                                        placeholder="Enter your full name"
+                                    >
+
+                                    <span class="form-error" id="register-name-error">
+                                        Please enter your name.
+                                    </span>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="register-email">
+                                        Email Address
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        id="register-email"
+                                        placeholder="Enter your email"
+                                    >
+
+                                    <span class="form-error" id="register-email-error">
+                                        Please enter a valid email.
+                                    </span>
+
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="register-password">
+                                        Password
+                                    </label>
+
+                                    <input
+                                        type="password"
+                                        id="register-password"
+                                        placeholder="Create a password"
+                                    >
+
+                                    <span class="form-error" id="register-password-error">
+                                        Password must be at least 6 characters.
+                                    </span>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="confirm-password">
+                                        Confirm Password
+                                    </label>
+
+                                    <input
+                                        type="password"
+                                        id="confirm-password"
+                                        placeholder="Confirm password"
+                                    >
+
+                                    <span class="form-error" id="confirm-password-error">
+                                        Passwords do not match.
+                                    </span>
+                                </div>
+                            </div>
+
+                            <button class="btn auth-btn" type="submit">
+                                Create Account
+                            </button>
+
+                            <p class="auth-switch">
+                                Already have an account?
+                                <a href="" id="show-login-form" class="auth-link">
+                                    Sign In
+                                </a>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="toast"></div>
+
+        <script src="utils.js"></script>
+        <script src="auth(LR).js"></script>
+        
+
+    </body>
+</html>
