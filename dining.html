@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HavenStay</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index1.html">
+        <img class="logo" src="assets/havenstay-logo-gold.png" alt="" />
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index1.html">Home</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="dining.html">Dining</a></li>
+        <li><a href="wellness.html">Wellness</a></li>
+        <li><a href="meetings-events.html">Meetings &amp; Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Visible before login -->
+        <div id="guest-links" class="nav-group">
+          <a href="auth.html" class="auth-link"> Sign In </a>
+        </div>
+
+        <!-- Visible after login -->
+        <div id="user-links" class="nav-group hidden">
+          <span id="welcome-user" class="welcome-user">
+            <i class="fa-solid fa-user"></i>
+          </span>
+          <a href="cart.html" class="cart-link">
+            Bookings
+            <span id="cart-count">0</span>
+          </a>
+
+          <a href="#" id="logout-btn">Logout</a>
+        </div>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <section
+      class="page-hero"
+      style="background-image: url(assets/Hero-3.jpg)"
+    >
+      <div class="page-hero-content">
+        <span class="page-hero-eyebrow">Dining</span>
+        <h1>Exquisite Culinary Experiences</h1>
+      </div>
+    </section>

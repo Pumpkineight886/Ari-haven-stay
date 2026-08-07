@@ -1511,7 +1511,61 @@ body {
 .ari-add-to-cart-btn:hover {
   background: #13315c;
 }
+/* Page Hero (interior pages) */
+.page-hero {
+  position: relative;
+  min-height: 75vh;
+  padding-top: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #fff;
+}
 
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11,37,69,0.55);
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  padding: 0 24px;
+}
+
+.page-hero-eyebrow {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--hs-gold);
+  margin-bottom: 14px;
+}
+
+.page-hero h1 {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+.page-hero p {
+  font-size: 16px;
+  color: #e8e5dd;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .page-hero { min-height: 34vh; }
+  .page-hero h1 { font-size: 32px; }
+}
 @media (max-width: 900px) {
   .ari-rooms-grid { grid-template-columns: 1fr; padding: 0 24px 60px; }
   .ari-rooms-hero { padding: 130px 24px 30px; }
