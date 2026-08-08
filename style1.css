@@ -1561,7 +1561,623 @@ body {
   color: #e8e5dd;
   line-height: 1.5;
 }
+/* Dining Intro Card */
+.ari-dining-intro {
+  display: flex;
+  gap: 0;
+  max-width: 1200px;
+  margin: 60px auto 100px;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(11,37,69,0.12);
+}
 
+.ari-dining-image {
+  flex: 0 0 45%;
+}
+
+.ari-dining-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  min-height: 640px;
+}
+
+.ari-dining-content {
+  flex: 1;
+  padding: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ari-dining-badge {
+  display: inline-block;
+  align-self: flex-start;
+  border: 1px solid var(--hs-gold);
+  color: var(--hs-gold);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+
+.ari-dining-content h1 {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 600;
+  color: var(--hs-navy);
+  margin-bottom: 20px;
+}
+
+.ari-dining-content > p {
+  font-size: 15px;
+  color: #6b6b6b;
+  line-height: 1.7;
+  margin-bottom: 36px;
+  max-width: 440px;
+}
+
+.ari-dining-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 20px;
+  margin-bottom: 40px;
+  padding-bottom: 4px;
+}
+
+.ari-dining-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #eee;
+}
+
+.ari-dining-feature i {
+  font-size: 26px;
+  color: var(--hs-gold);
+}
+
+.ari-dining-feature span {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--hs-navy);
+}
+
+.ari-dining-cta {
+  align-self: center;
+  border: 1.5px solid var(--hs-gold);
+  color: var(--hs-navy);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 14px 40px;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.ari-dining-cta:hover {
+  background: var(--hs-gold);
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .ari-dining-intro {
+    flex-direction: column;
+    margin: 40px 24px 60px;
+  }
+
+  .ari-dining-image img {
+    min-height: 280px;
+  }
+
+  .ari-dining-content {
+    padding: 36px 28px;
+  }
+
+  .ari-dining-content h1 {
+    font-size: 30px;
+  }
+
+  .ari-dining-cta {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* Restaurants Section */
+.ari-restaurants {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px 60px 100px;
+}
+
+.ari-restaurants-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 56px;
+}
+
+.ari-restaurants-header .ari-dining-badge {
+  margin-bottom: 20px;
+}
+
+.ari-restaurants-header h2 {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--hs-navy);
+  line-height: 1.25;
+  margin-bottom: 16px;
+}
+
+.ari-restaurants-header p {
+  font-size: 15px;
+  color: #6b6b6b;
+  line-height: 1.6;
+}
+
+.ari-restaurant-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.ari-restaurant-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(11,37,69,0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ari-restaurant-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(11,37,69,0.16);
+}
+
+.ari-restaurant-image {
+  height: 220px;
+}
+
+.ari-restaurant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ari-restaurant-content {
+  padding: 26px;
+}
+
+.ari-restaurant-content h3 {
+  font-family: var(--font-display);
+  font-size: 21px;
+  color: var(--hs-navy);
+  margin-bottom: 10px;
+}
+
+.ari-restaurant-content > p {
+  font-size: 14px;
+  color: #6b6b6b;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.ari-restaurant-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.ari-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f6f4ee;
+  color: var(--hs-navy);
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 999px;
+}
+
+.ari-tag i {
+  color: var(--hs-gold);
+  font-size: 12px;
+}
+
+.ari-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--hs-gold);
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.ari-read-more span {
+  transition: transform 0.2s ease;
+}
+
+.ari-read-more:hover span {
+  transform: translateX(4px);
+}
+
+@media (max-width: 900px) {
+  .ari-restaurant-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ari-restaurants {
+    padding: 20px 24px 60px;
+  }
+
+  .ari-restaurants-header h2 {
+    font-size: 28px;
+  }
+}
+/* Our Chefs */
+.ari-chefs {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 20px 60px 110px;
+}
+
+.ari-chefs-header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 56px;
+}
+
+.ari-chefs-header .ari-dining-badge {
+  margin-bottom: 20px;
+}
+
+.ari-chefs-header h2 {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--hs-navy);
+  margin-bottom: 16px;
+}
+
+.ari-chefs-header p {
+  font-size: 15px;
+  color: #6b6b6b;
+  line-height: 1.6;
+}
+
+.ari-chefs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 28px;
+}
+
+.ari-chef-card {
+  text-align: center;
+}
+
+.ari-chef-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 24px rgba(11,37,69,0.12);
+}
+
+.ari-chef-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(15%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.ari-chef-card:hover .ari-chef-image img {
+  filter: grayscale(0%);
+  transform: scale(1.04);
+}
+
+.ari-chef-card h3 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: var(--hs-navy);
+  margin-bottom: 4px;
+}
+
+.ari-chef-role {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: var(--hs-gold);
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .ari-chefs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 20px;
+  }
+
+  .ari-chefs {
+    padding: 20px 24px 70px;
+  }
+}
+
+@media (max-width: 560px) {
+  .ari-chefs-grid {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+/* Opening Hours */
+.ari-hours {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 24px 120px;
+}
+
+.ari-hours-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.ari-hours-header .ari-dining-badge {
+  margin-bottom: 20px;
+}
+
+.ari-hours-header h2 {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--hs-navy);
+  margin-bottom: 16px;
+}
+
+.ari-hours-header p {
+  font-size: 15px;
+  color: #6b6b6b;
+}
+
+.ari-hours-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(11,37,69,0.1);
+  padding: 8px 44px;
+}
+
+.ari-hours-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.ari-hours-row:last-child {
+  border-bottom: none;
+}
+
+.ari-hours-label {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ari-hours-label i {
+  font-size: 18px;
+  color: var(--hs-gold);
+  width: 20px;
+  text-align: center;
+}
+
+.ari-hours-label span {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--hs-navy);
+}
+
+.ari-hours-time {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: #6b6b6b;
+}
+
+@media (max-width: 600px) {
+  .ari-hours-card {
+    padding: 6px 24px;
+  }
+
+  .ari-hours-row {
+    padding: 20px 0;
+  }
+
+  .ari-hours-label span {
+    font-size: 16px;
+  }
+
+  .ari-hours-time {
+    font-size: 13px;
+  }
+
+  .ari-hours-header h2 {
+    font-size: 28px;
+  }
+}
+/* Reserve a Table */
+.ari-reserve {
+  position: relative;
+  min-height: 100vh;
+  background-image: url('assets/Hero-4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+}
+
+.ari-reserve::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11,37,69,0.55);
+}
+
+.ari-reserve-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 680px;
+  text-align: center;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 20px;
+  padding: 56px 50px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+}
+
+.ari-reserve-card .ari-dining-badge {
+  color: var(--hs-gold);
+  border-color: var(--hs-gold);
+  margin-bottom: 24px;
+}
+
+.ari-reserve-card h2 {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.ari-reserve-card > p {
+  font-size: 15px;
+  color: #e4e1d8;
+  line-height: 1.6;
+  margin-bottom: 36px;
+}
+
+.ari-reserve-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ari-reserve-row {
+  display: flex;
+  gap: 16px;
+}
+
+.ari-reserve-row-single {
+  justify-content: center;
+}
+
+.ari-reserve-row input,
+.ari-reserve-row select {
+  flex: 1;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 8px;
+  padding: 14px 16px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.ari-reserve-row-single input {
+  max-width: 320px;
+}
+
+.ari-reserve-row input::placeholder {
+  color: #d8d5cc;
+}
+
+.ari-reserve-row input:focus,
+.ari-reserve-row select:focus {
+  border-color: var(--hs-gold);
+  background: rgba(255,255,255,0.18);
+}
+
+.ari-reserve-row select option {
+  color: #0B2545;
+}
+
+.ari-reserve-row input[type="date"]::-webkit-calendar-picker-indicator,
+.ari-reserve-row input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+  cursor: pointer;
+}
+
+.ari-reserve-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  align-self: center;
+  margin-top: 10px;
+  border: none;
+  background: var(--hs-gold);
+  color: var(--hs-navy);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 15px 40px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.ari-reserve-btn:hover {
+  background: #dab661;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 700px) {
+  .ari-reserve {
+    background-attachment: scroll; /* fixed backgrounds are unreliable on mobile browsers */
+    min-height: auto;
+    padding: 60px 20px;
+  }
+
+  .ari-reserve-card {
+    padding: 40px 28px;
+  }
+
+  .ari-reserve-card h2 {
+    font-size: 28px;
+  }
+
+  .ari-reserve-row {
+    flex-direction: column;
+  }
+
+  .ari-reserve-row-single input {
+    max-width: 100%;
+  }
+}
 @media (max-width: 700px) {
   .page-hero { min-height: 34vh; }
   .page-hero h1 { font-size: 32px; }
