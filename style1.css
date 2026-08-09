@@ -1192,8 +1192,8 @@ body {
 
 .form-row .form-group {
   flex: 1;
+  min-width: 0;
 }
-
 .form-group {
   display: flex;
   flex-direction: column;
@@ -2153,6 +2153,239 @@ body {
 .ari-reserve-btn:hover {
   background: #dab661;
   transform: translateY(-1px);
+}
+/* Cart / Bookings Page */
+.ari-cart-layout {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 32px;
+  max-width: 1300px;
+  margin: 60px auto 100px;
+  padding: 0 24px;
+  align-items: start;
+}
+
+.ari-cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ari-cart-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(11,37,69,0.08);
+}
+
+.ari-cart-item img {
+  width: 130px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.ari-cart-item-info {
+  flex: 1;
+}
+
+.ari-cart-item-info h3 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: var(--hs-navy);
+  margin-bottom: 6px;
+}
+
+.ari-cart-item-info p {
+  font-size: 14px;
+  color: #6b6b6b;
+  margin-bottom: 6px;
+}
+
+.ari-cart-item-price-night {
+  font-size: 13px;
+  color: #9a9a9a;
+}
+
+.ari-cart-item-total {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.ari-cart-item-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2e8b57;
+}
+
+.ari-remove-btn {
+  background: none;
+  border: none;
+  color: #d64545;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+}
+
+.ari-remove-btn:hover {
+  text-decoration: underline;
+}
+
+.ari-cart-empty-wrap {
+  width: 100%;
+  background: #fff;
+  padding: 80px 24px;
+}
+
+.ari-cart-empty {
+  text-align: center;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.ari-cart-empty p {
+  color: #6b6b6b;
+  margin-bottom: 24px;
+}
+
+.ari-cart-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 24px;
+}
+
+.ari-order-summary {
+  background: var(--hs-navy);
+  color: #fff;
+  border-radius: 14px;
+  padding: 32px;
+}
+
+.ari-order-summary h2,
+.ari-guest-form h2 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.ari-order-summary h2 { color: #fff; }
+.ari-guest-form h2 { color: var(--hs-navy); }
+
+.ari-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #cfd4de;
+  padding: 10px 0;
+}
+
+.ari-summary-total {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-top: 8px;
+  padding-top: 18px;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--hs-gold);
+}
+
+.ari-summary-total span { color: var(--hs-gold); }
+
+.ari-guest-form {
+  background: #fff;
+  border-radius: 14px;
+  padding: 32px;
+  box-shadow: 0 10px 30px rgba(11,37,69,0.08);
+}
+
+.ari-form-group {
+  margin-bottom: 18px;
+}
+
+.ari-form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--hs-navy);
+  margin-bottom: 6px;
+}
+
+.ari-form-group label span {
+  font-weight: 400;
+  color: #9a9a9a;
+}
+
+.ari-form-group input,
+.ari-form-group textarea {
+  width: 100%;
+  border: 1px solid #dcd8cf;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--hs-navy);
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.2s ease;
+}
+
+.ari-form-group input:focus,
+.ari-form-group textarea:focus {
+  border-color: var(--hs-gold);
+}
+
+.ari-checkout-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  border: none;
+  background: var(--hs-gold);
+  color: var(--hs-navy);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 15px;
+  border-radius: 999px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.15s ease;
+  margin-top: 8px;
+}
+
+.ari-checkout-btn:hover {
+  background: #dab661;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 900px) {
+  .ari-cart-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .ari-cart-sidebar {
+    position: static;
+  }
+
+  .ari-cart-item {
+    flex-wrap: wrap;
+  }
+
+  .ari-cart-item-total {
+    align-items: flex-start;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 700px) {

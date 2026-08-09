@@ -60,169 +60,145 @@
         </button>
       </div>
     </nav>
-<br><br><br>
-        <section class="auth-section">
-            <div class="auth-container">
-                <div class="auth-content">
-                    <div id="login-panel">
-                        <!-- EVERYTHING YOU CURRENTLY HAVE
+    <br /><br /><br />
+    <section class="auth-section">
+      <div class="auth-container">
+        <div class="auth-content">
+          <div id="login-panel">
+            <!-- EVERYTHING YOU CURRENTLY HAVE
                             (section-title + form)
                             GOES HERE -->
-                        <div class="section-title">
-                            <h2>Welcome Back</h2>
-                            <p class="auth-subtitle">
-                                Sign in to continue your luxury experience.
-                            </p>
-                        </div>
-
-                        <form class="contact-form auth-form" id="login-form">
-
-                            <div class="form-group">
-                                <label for="login-email">
-                                    Email Address
-                                </label>
-
-                                <input
-                                    type="email"
-                                    id="login-email"
-                                    placeholder="Enter your email"
-                                >
-
-                                <span class="form-error" id="login-email-error">
-                                    Please enter a valid email.
-                                </span>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="login-password">
-                                    Password
-                                </label>
-
-                                <input
-                                    type="password"
-                                    id="login-password"
-                                    placeholder="Enter your password"
-                                >
-
-                                <span class="form-error" id="login-password-error">
-                                    Please enter your password.
-                                </span>
-                            </div>
-
-                            <button class="btn auth-btn" type="submit">
-                                Sign In
-                            </button>
-
-                            <p class="auth-switch">
-                                Don't have an account?
-                                <a href="#" id="show-register-form" class="auth-link">
-                                    Create one
-                                </a>
-                            </p>
-                        </form>
-                    </div>
-
-                    <!-- REGISTER FORM -->
-
-                    <div id="register-panel">
-                        <div class="section-title">
-                            <h2>Create Your Account</h2>
-                            <p class="auth-subtitle">
-                                Join Haven Stay and start booking your perfect stay.
-                            </p>
-                        </div>
-                        <form class="contact-form auth-form" id="register-form">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="register-name">
-                                        Full Name
-                                    </label>
-
-                                    <input
-                                        type="text"
-                                        id="register-name"
-                                        placeholder="Enter your full name"
-                                    >
-
-                                    <span class="form-error" id="register-name-error">
-                                        Please enter your name.
-                                    </span>
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="register-email">
-                                        Email Address
-                                    </label>
-
-                                    <input
-                                        type="email"
-                                        id="register-email"
-                                        placeholder="Enter your email"
-                                    >
-
-                                    <span class="form-error" id="register-email-error">
-                                        Please enter a valid email.
-                                    </span>
-
-                                </div>
-                            </div>
-
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="register-password">
-                                        Password
-                                    </label>
-
-                                    <input
-                                        type="password"
-                                        id="register-password"
-                                        placeholder="Create a password"
-                                    >
-
-                                    <span class="form-error" id="register-password-error">
-                                        Password must be at least 6 characters.
-                                    </span>
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="confirm-password">
-                                        Confirm Password
-                                    </label>
-
-                                    <input
-                                        type="password"
-                                        id="confirm-password"
-                                        placeholder="Confirm password"
-                                    >
-
-                                    <span class="form-error" id="confirm-password-error">
-                                        Passwords do not match.
-                                    </span>
-                                </div>
-                            </div>
-
-                            <button class="btn auth-btn" type="submit">
-                                Create Account
-                            </button>
-
-                            <p class="auth-switch">
-                                Already have an account?
-                                <a href="" id="show-login-form" class="auth-link">
-                                    Sign In
-                                </a>
-                            </p>
-                        </form>
-                    </div>
-                </div>
+            <div class="section-title">
+              <h2>Welcome Back</h2>
+              <p class="auth-subtitle">
+                Sign in to continue your luxury experience.
+              </p>
             </div>
-        </section>
-        <div id="toast"></div>
 
-        <script src="utils.js"></script>
-        <script src="auth(LR).js"></script>
-        
+            <form class="contact-form auth-form" id="login-form">
+              <div class="form-group">
+                <label for="login-email"> Email Address </label>
 
-    </body>
+                <input
+                  type="email"
+                  id="login-email"
+                  placeholder="Enter your email"
+                />
+
+                <span class="form-error" id="login-email-error">
+                  Please enter a valid email.
+                </span>
+              </div>
+
+              <div class="form-group">
+                <label for="login-password"> Password </label>
+
+                <input
+                  type="password"
+                  id="login-password"
+                  placeholder="Enter your password"
+                />
+
+                <span class="form-error" id="login-password-error">
+                  Please enter your password.
+                </span>
+              </div>
+
+              <button class="btn auth-btn" type="submit">Sign In</button>
+
+              <p class="auth-switch">
+                Don't have an account?
+                <a href="#" id="show-register-form" class="auth-link">
+                  Create one
+                </a>
+              </p>
+            </form>
+          </div>
+
+          <!-- REGISTER FORM -->
+
+          <div id="register-panel">
+            <div class="section-title">
+              <h2>Create Your Account</h2>
+              <p class="auth-subtitle">
+                Join Haven Stay and start booking your perfect stay.
+              </p>
+            </div>
+            <form class="contact-form auth-form" id="register-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="register-name"> Full Name </label>
+
+                  <input
+                    type="text"
+                    id="register-name"
+                    placeholder="Enter your full name"
+                  />
+
+                  <span class="form-error" id="register-name-error">
+                    Please enter your name.
+                  </span>
+                </div>
+
+                <div class="form-group">
+                  <label for="register-email"> Email Address </label>
+
+                  <input
+                    type="email"
+                    id="register-email"
+                    placeholder="Enter your email"
+                  />
+
+                  <span class="form-error" id="register-email-error">
+                    Please enter a valid email.
+                  </span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="register-password"> Password </label>
+
+                  <input
+                    type="password"
+                    id="register-password"
+                    placeholder="Create a password"
+                  />
+
+                  <span class="form-error" id="register-password-error">
+                    Password must be at least 6 characters.
+                  </span>
+                </div>
+
+                <div class="form-group">
+                  <label for="confirm-password"> Confirm Password </label>
+
+                  <input
+                    type="password"
+                    id="confirm-password"
+                    placeholder="Confirm password"
+                  />
+
+                  <span class="form-error" id="confirm-password-error">
+                    Passwords do not match.
+                  </span>
+                </div>
+              </div>
+
+              <button class="btn auth-btn" type="submit">Create Account</button>
+
+              <p class="auth-switch">
+                Already have an account?
+                <a href="" id="show-login-form" class="auth-link"> Sign In </a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div id="toast"></div>
+
+    <script src="utils.js"></script>
+<script src="auth(LR).js"></script>
+  </body>
 </html>

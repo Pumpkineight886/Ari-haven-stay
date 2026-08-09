@@ -63,3 +63,41 @@ function updateCartCount() {
     cartCountEl.style.display = count > 0 ? "inline-block" : "none";
     cartCountEl.textContent = count;
 }
+
+// Add to utils.js
+
+function updateNavigation() {
+    const guestLinks = document.getElementById("guest-links");
+    const userLinks = document.getElementById("user-links");
+    const welcomeUser = document.getElementById("welcome-user");
+
+    if (!guestLinks || !userLinks) return;
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    if (currentUser) {
+        guestLinks.classList.add("hidden");
+        userLinks.classList.remove("hidden");
+        if (welcomeUser) {
+            welcomeUser.innerHTML = `
+                <i class="fa-solid fa-user"></i> ${currentUser.name}
+            `;
+        }
+    } else {
+        guestLinks.classList.remove("hidden");
+        userLinks.classList.add("hidden");
+    }
+    updateCartCount();
+}
+updateNavigation();
+
+const logoutBtn = document.getElementById("logout-btn");
+
+if (logoutBtn) {
+    logoutBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        localStorage.removeItem("loggedIn");
+        localStorage.removeItem("currentUser");
+        updateNavigation();
+        alert("You have logged out.");
+        window.location.href = "index1.html";
+    });
+}

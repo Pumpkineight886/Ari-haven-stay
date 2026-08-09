@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HavenStay</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index1.html">
+        <img class="logo" src="assets/havenstay-logo-gold.png" alt="" />
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index1.html">Home</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="dining.html">Dining</a></li>
+        <li><a href="wellness.html">Wellness</a></li>
+        <li><a href="meetings.html">Meetings &amp; Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Visible before login -->
+        <div id="guest-links" class="nav-group">
+          <a href="auth.html" class="auth-link"> Sign In </a>
+        </div>
+
+        <!-- Visible after login -->
+        <div id="user-links" class="nav-group hidden">
+          <span id="welcome-user" class="welcome-user">
+            <i class="fa-solid fa-user"></i>
+          </span>
+          <a href="cart.html" class="cart-link">
+            Bookings
+            <span id="cart-count">0</span>
+          </a>
+
+          <a href="#" id="logout-btn">Logout</a>
+        </div>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <br /><br /><br />
+
+    <section
+      class="ari-cart-empty-wrap"
+      id="ari-cart-empty-wrap"
+      style="display: none"
+    >
+      <div class="ari-cart-empty">
+        <p>You don't have any rooms booked yet.</p>
+        <a href="rooms.html" class="ari-checkout-btn">Browse Rooms</a>
+      </div>
+    </section>
+
+    <section class="ari-cart-layout" id="ari-cart-layout">
+      <div class="ari-cart-items" id="ari-cart-items">
+        <!-- injected by JS -->
+      </div>
+
+      <div class="ari-cart-sidebar">
+        <div class="ari-order-summary">
+          <h2>Order Summary</h2>
+          <div class="ari-summary-row">
+            <span>Booked rooms</span>
+            <span id="ari-summary-count">0</span>
+          </div>
+          <div class="ari-summary-row">
+            <span>Subtotal</span>
+            <span id="ari-summary-subtotal">₦0</span>
+          </div>
+          <div class="ari-summary-row">
+            <span>Service fee</span>
+            <span id="ari-summary-fee">₦0</span>
+          </div>
+          <div class="ari-summary-row ari-summary-total">
+            <span>Total</span>
+            <span id="ari-summary-total">₦0</span>
+          </div>
+        </div>
+
+        <div class="ari-guest-form">
+          <h2>Guest Details</h2>
+          <form id="ari-checkout-form">
+            <div class="ari-form-group">
+              <label for="ari-guest-name">Full Name</label>
+              <input
+                type="text"
+                id="ari-guest-name"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+
+            <div class="ari-form-group">
+              <label for="ari-guest-email">Email Address</label>
+              <input
+                type="email"
+                id="ari-guest-email"
+                placeholder="Enter your email"
+                required
+              />
+            </div>
+
+            <div class="ari-form-group">
+              <label for="ari-guest-phone">Phone Number</label>
+              <input
+                type="tel"
+                id="ari-guest-phone"
+                placeholder="Enter your phone number"
+                required
+              />
+            </div>
+
+            <div class="ari-form-group">
+              <label for="ari-guest-notes"
+                >Special Requests <span>(optional)</span></label
+              >
+              <textarea
+                id="ari-guest-notes"
+                rows="3"
+                placeholder="Any special requests for your stay?"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="ari-checkout-btn">
+              Confirm &amp; Pay
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script src="utils.js"></script>
+    <script src="bookings.js"></script>
+  </body>
+</html>

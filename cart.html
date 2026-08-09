@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haven Stay Hotel | Your Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container navbar">
+        <a href="index.html" class="logo">Haven<span>Stay</span></a>
+        <button class="menu-toggle" id="menu-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav class="nav-links">
+          <div class="nav-center">
+            <a href="index.html">Home</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="about.html">About</a>
+            <a href="dining.html">Dining</a>
+            <a href="wellness.html">Wellness</a>
+            <a href="events.html">Meetings & Events</a>
+            <a href="gallery.html">Gallery</a>
+          </div>
+
+          <!-- Visible before login -->
+          <div id="guest-links" class="nav-group">
+            <a href="#" id="show-register" class="auth-link">
+                Create one
+            </a>
+            <a href="#" id="show-login" class="auth-link">
+                Sign In
+            </a>
+          </div>
+
+          <!-- Visible after login -->
+          <div id="user-links" class="nav-group hidden">
+            <span id="welcome-user" class="welcome-user">
+              <i class="fa-solid fa-user"></i>
+            </span>
+            <a href="cart.html" class="cart-link">
+              Bookings
+              <span id="cart-count">0</span>
+            </a>
+
+            <a href="#" id="logout-btn">Logout</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Your Bookings</h2>
+          <p>Review your selected rooms and confirm your booking</p>
+        </div>
+
+        <!-- Shown only when the cart array is empty -->
+        <div class="empty-cart" id="empty-cart-message" style="display: none">
+          <p>
+            You have no rooms booked yet.
+            <a
+              href="rooms.html"
+              style="color: var(--color-green); font-weight: 600"
+              >Browse rooms &rarr;</a
+            >
+          </p>
+        </div>
+
+        <div class="cart-layout">
+          <!-- left column: list of items, built by cart.js -->
+          <div>
+            <div id="cart-items"><!-- filled in by JavaScript --></div>
+          </div>
+
+          <!-- right column: totals + checkout form -->
+          <div>
+            <div class="cart-summary" id="cart-summary">
+              <h3>Order Summary</h3>
+              <div class="summary-row">
+                <span>Booked rooms</span>
+                <span id="summary-count">0</span>
+              </div>
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <span id="summary-subtotal">₦0</span>
+              </div>
+              <div class="summary-row">
+                <span>Service fee</span>
+                <span id="summary-fee">₦0</span>
+              </div>
+              <div class="summary-row total">
+                <span>Total</span>
+                <span id="summary-total">₦0</span>
+              </div>
+            </div>
+
+            <!-- Simple checkout form handled in cart.js -->
+            <form class="contact-form" id="checkout-form">
+              <h3 style="margin-bottom: 16px">Guest Details</h3>
+
+              <div class="form-group">
+                <label for="guest-name">Full Name</label>
+                <input
+                  type="text"
+                  id="guest-name"
+                  placeholder="e.g. Shallipopi"
+                />
+                <span class="form-error" id="name-error"
+                  >Please enter your name.</span
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="guest-email">Email Address</label>
+                <input
+                  type="email"
+                  id="guest-email"
+                  placeholder="e.g. shallipopi@gmail.com"
+                />
+                <span class="form-error" id="email-error"
+                  >Please enter a valid email.</span
+                >
+              </div>
+
+              <button type="submit" class="btn" style="width: 100%">
+                Confirm Booking
+              </button>
+
+              <div class="form-success" id="checkout-success">
+                Booking confirmed! A confirmation email would be sent here in
+                a real application.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== 
+            FOOTER 
+    ===================== -->
+
+    <footer>
+        <div class="container footer-container">
+
+            <!-- About -->
+            <div class="footer-section">
+                <h3>About Haven<span>Stay</span></h3>
+
+                <p>
+                    HavenStay offers comfortable, affordable, and luxurious hotel
+                    rooms across Nigeria. Whether you're travelling for business
+                    or leisure, we make every stay memorable.
+                </p>
+
+                <form class="newsletter">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit" class="btn">Subscribe</button>
+                </form>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+
+                <ul class="footer-links">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> Home</a></li>
+                    <li><a href="rooms.html"><i class="fa-solid fa-bed"></i> Rooms</a></li>
+                    <li><a href="location.html"><i class="fa-solid fa-building"></i> About</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+
+                <p><i class="fa-solid fa-location-dot"></i> Kaduna, Nigeria</p>
+                <p><i class="fa-solid fa-envelope"></i> info@havenstay.com</p>
+                <p><i class="fa-solid fa-phone"></i> +234 812 345 6789</p>
+                <p><i class="fa-solid fa-clock"></i> Open 24/7</p>
+
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <hr>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; 2026 <strong>HavenStay</strong>. All Rights Reserved.
+            </p>
+
+        </div>
+    </footer>
+
+    <div id="toast"></div>
+
+    <!-- script.js must load before cart.js, because cart.js uses
+         helper functions (getCart, saveCart, formatPrice, etc.)
+         that are defined in script.js. -->
+    <script src="script.js"></script>
+    <script src="cart.js"></script>
+    <script src="auth(LR).js"></script>
+  </body>
+</html>
