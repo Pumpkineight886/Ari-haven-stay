@@ -3,13 +3,13 @@ const exploreData = {
   poolside: [
     {
       tag: "Emerald Coast Escapes",
-      title: "Make a Splash in Destin, Florida",
+      title: "Make a Splash in  Abuja",
       desc: "Morning laps, a quick dip, or a full day poolside — these stays are built around the water.",
       img: "assets/swimming-pool-1.jpg"
     },
     {
       tag: "Lounging on the Strip",
-      title: "Cool Off in Las Vegas, Nevada",
+      title: "Cool Off in Lagos",
       desc: "Palm-lined pools and cabana service right off the strip, for stays that never rush.",
       img: "assets/swimming-pool-2.jpg"
     }
@@ -17,7 +17,7 @@ const exploreData = {
   exclusives: [
     {
       tag: "Members Only",
-      title: "Unlock Rates Only Bonvoy-Style Members See",
+      title: "Unlock Rates Only Haven Stay Members See",
       desc: "Sign in to reveal exclusive pricing at participating HavenStay properties.",
       img: "assets/exclusives-1.jpg"
     },
