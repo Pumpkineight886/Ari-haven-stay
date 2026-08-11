@@ -1,0 +1,537 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HavenStay</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:wght@400;500;600&display=swap"
+    rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index1.html">
+        <img class="logo" src="assets/havenstay-logo-gold.png" alt="" />
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index1.html">Home</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="dining.html">Dining</a></li>
+        <li><a href="wellness.html">Wellness</a></li>
+        <li><a href="meetings.html">Meetings &amp; Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Visible before login -->
+        <div id="guest-links" class="nav-group">
+          <a href="auth.html" class="auth-link"> Sign In </a>
+        </div>
+
+        <!-- Visible after login -->
+        <div id="user-links" class="nav-group hidden">
+          <span id="welcome-user" class="welcome-user">
+            <i class="fa-solid fa-user"></i>
+          </span>
+          <a href="bookings.html" class="cart-link">
+            Bookings
+            <span id="cart-count">0</span>
+          </a>
+
+          <a href="#" id="logout-btn">Logout</a>
+        </div>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Wellness Hero -->
+    <section class="wellness-hero">
+        <div class="wellness-hero-overlay">
+            <div class="wellness-hero-content">
+                <span class="wellness-hero-eyebrow">Wellness & Restoration</span>
+
+                <h1>Restore Your Balance</h1>
+
+                <p>
+                    Reconnect with yourself. Restore your body.
+                    Renew your mind.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wellness Philosophy -->
+    <section class="wellness-philosophy">
+        <div class="wellness-philosophy-images">
+            <div class="wellness-image wellness-image-top">
+                <img src="spa-image1.jpg" alt="HavenStay wellness experience">
+            </div>
+
+            <div class="wellness-image wellness-image-bottom">
+                <img src="spa-image2.jpg" alt="Relaxing wellness space">
+            </div>
+        </div>
+
+        <div class="wellness-philosophy-content">
+            <span class="wellness-eyebrow">OUR PHILOSOPHY</span>
+
+            <h2>The Art of Well-Being</h2>
+
+            <p>
+                Wellness isn't something you rush through.
+                It is time deliberately created for yourself.
+            </p>
+
+            <p>
+                At HavenStay, our wellness experiences are designed
+                to restore balance, release tension and help you
+                return feeling renewed.
+            </p>
+
+            <div class="wellness-values">
+                <div class="wellness-value wellness-value-top">
+                    <i class="fa-solid fa-spa"></i>
+                    <span>Restore</span>
+                </div>
+
+                <div class="wellness-value wellness-value-left">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    <span>Rebalance</span>
+                </div>
+
+                <div class="wellness-value wellness-value-right">
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>Renew</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+        WELLNESS EXPERIENCES
+    ===================================================== -->
+
+    <section class="wellness-experiences">
+        <div class="wellness-experiences-header">
+            <span class="wellness-eyebrow">Wellness Experiences</span>
+            <h2>Restore. Reconnect. Renew.</h2>
+            <p>
+                Discover thoughtfully designed experiences created
+                to help you slow down, restore your energy and
+                reconnect with yourself.
+            </p>
+        </div>
+
+
+        <div class="wellness-experiences-grid">
+            <!-- Spa & Massage -->
+            <div class="wellness-experience-card">
+                <div class="wellness-experience-image">
+                    <img src="assets/spa.jpg" alt="Spa and massage experience">
+                </div>
+
+                <div class="wellness-experience-content">
+                    <span class="wellness-experience-number">01</span>
+                    <h3>Spa & Massage</h3>
+                    <p>
+                        Release tension and unwind with restorative
+                        spa treatments and therapeutic massages.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Fitness Studio -->
+            <div class="wellness-experience-card">
+                <div class="wellness-experience-image">
+                    <img src="assets/fitness.jpg" alt="HavenStay fitness studio">
+                </div>
+
+                <div class="wellness-experience-content">
+                    <span class="wellness-experience-number">02</span>
+                    <h3>Fitness Studio</h3>
+                    <p>
+                        Stay active in a calm, modern environment
+                        designed to support your wellbeing.
+                    </p>
+                </div>
+            </div>
+
+
+            <!-- Yoga & Meditation -->
+            <div class="wellness-experience-card">
+                <div class="wellness-experience-image">
+                    <img src="assets/yoga.jpg" alt="Yoga and meditation experience">
+                </div>
+
+                <div class="wellness-experience-content">
+                    <span class="wellness-experience-number">03</span>
+                    <h3>Yoga & Meditation</h3>
+                    <p>
+                        Find stillness through mindful movement,
+                        breathing and guided relaxation.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Sauna & Steam -->
+            <div class="wellness-experience-card">
+                <div class="wellness-experience-image">
+                    <img src="assets/sauna.jpg" alt="Sauna and steam experience">
+                </div>
+
+                <div class="wellness-experience-content">
+                    <span class="wellness-experience-number">04</span>
+                    <h3>Sauna & Steam</h3>
+                    <p>
+                        Ease your body and refresh your senses
+                        with our sauna and steam facilities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+        WELLNESS JOURNEY
+        ===================================================== -->
+
+    <section class="wellness-journey">
+
+        <div class="wellness-journey-header">
+            <span class="wellness-eyebrow">THE WELLNESS JOURNEY</span>
+            <h2>Your Time to Restore</h2>
+            <p>
+                Every part of your wellness experience is designed
+                to help you slow down, reconnect and leave renewed.
+            </p>
+        </div>
+
+        <div class="wellness-journey-line">
+
+            <div class="wellness-step">
+                <div class="wellness-step-number">01</div>
+
+                <div class="wellness-step-icon">
+                    <i class="fa-solid fa-door-open"></i>
+                </div>
+
+                <h3>Arrive</h3>
+                <p>
+                    Leave the outside world behind and settle
+                    into a moment created entirely for you.
+                </p>
+            </div>
+
+            <div class="wellness-step">
+                <div class="wellness-step-number">02</div>
+
+                <div class="wellness-step-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+
+                <h3>Restore</h3>
+                <p>
+                    Release tension through calming treatments
+                    and intentional relaxation.
+                </p>
+            </div>
+
+            <div class="wellness-step">
+                <div class="wellness-step-number">03</div>
+
+                <div class="wellness-step-icon">
+                    <i class="fa-solid fa-spa"></i>
+                </div>
+
+                <h3>Rejuvenate</h3>
+                <p>
+                    Rediscover your energy through movement,
+                    mindfulness and restorative experiences.
+                </p>
+            </div>
+
+            <div class="wellness-step">
+                <div class="wellness-step-number">04</div>
+
+                <div class="wellness-step-icon">
+                    <i class="fa-solid fa-sun"></i>
+                </div>
+
+                <h3>Renew</h3>
+                <p>
+                    Leave feeling lighter, refreshed and ready
+                    to carry that feeling beyond HavenStay.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- =====================================================
+        WELLNESS SPACES
+    ===================================================== -->
+
+    <section class="wellness-spaces">
+
+        <div class="wellness-spaces-header">
+            <div>
+                <span class="wellness-eyebrow">Wellness Spaces</span>
+
+                <h2>Spaces Designed for You</h2>
+
+                <p>
+                    Discover thoughtfully designed spaces created
+                    to help you move, relax and restore.
+                </p>
+            </div>
+
+            <a href="#" class="wellness-spaces-view-more">
+                View More <span>→</span>
+            </a>
+        </div>
+
+
+        <div class="wellness-spaces-carousel-wrapper">
+
+            <button class="wellness-spaces-nav wellness-spaces-prev" aria-label="Previous wellness space">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <!-- Wellness Spaces Carousel -->
+
+            <div class="wellness-spaces-carousel">
+
+                <!-- Fitness Studio -->
+
+                <article class="wellness-space-card">
+                    <img src="assets/fitness-studio.jpg" alt="Fitness Studio">
+
+                    <div class="wellness-space-overlay"></div>
+
+                    <div class="wellness-space-content">
+                        <h3>Fitness Studio</h3>
+
+                        <p>
+                            Move with purpose in a space designed
+                            for strength and wellness.
+                        </p>
+                    </div>
+                </article>
+
+
+                <!-- Steam & Sauna -->
+
+                <article class="wellness-space-card">
+                    <img src="assets/steam-sauna.jpg" alt="Steam and Sauna">
+
+                    <div class="wellness-space-overlay"></div>
+
+                    <div class="wellness-space-content">
+                        <h3>Steam &amp; Sauna</h3>
+
+                        <p>
+                            Unwind in soothing heat designed
+                            to release tension and restore.
+                        </p>
+                    </div>
+                </article>
+
+
+                <!-- Relaxation Lounge -->
+
+                <article class="wellness-space-card">
+                    <img src="spa-image2.jpg" alt="Relaxation Lounge">
+
+                    <div class="wellness-space-overlay"></div>
+
+                    <div class="wellness-space-content">
+                        <h3>Relaxation Lounge</h3>
+
+                        <p>
+                            Slow down and settle into a peaceful
+                            space created for quiet moments.
+                        </p>
+                    </div>
+                </article>
+
+
+                <!-- Yoga & Meditation -->
+
+                <article class="wellness-space-card">
+                    <img src="assets/yoga-meditation.jpg" alt="Yoga and Meditation Space">
+
+                    <div class="wellness-space-overlay"></div>
+
+                    <div class="wellness-space-content">
+                        <h3>Yoga &amp; Meditation</h3>
+
+                        <p>
+                            Find balance through mindful movement
+                            and moments of stillness.
+                        </p>
+                    </div>
+                </article>
+
+
+                <!-- Pool & Hydrotherapy -->
+
+                <article class="wellness-space-card">
+                    <img src="assets/pool-hydrotherapy.jpg" alt="Pool and Hydrotherapy">
+
+                    <div class="wellness-space-overlay"></div>
+
+                    <div class="wellness-space-content">
+                        <h3>Pool &amp; Hydrotherapy</h3>
+
+                        <p>
+                            Refresh and rejuvenate with calming
+                            water-based wellness experiences.
+                        </p>
+                    </div>
+                </article>
+
+            </div>
+            <button class="wellness-spaces-nav wellness-spaces-next" aria-label="Next" wellness space>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+        <!-- Carousel Pagination -->
+
+        <div class="wellness-spaces-pagination">
+            <span class="active"></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </section>
+
+    <!-- =====================================================
+        WELLNESS CTA
+        ===================================================== -->
+
+    <section class="wellness-cta">
+
+        <div class="wellness-cta-content">
+
+            <span class="wellness-eyebrow">
+                Your Time Is Yours
+            </span>
+
+            <h2>Make Time For Yourself</h2>
+
+            <p>
+                Make space to rest, restore and reconnect.
+                Your wellness experience begins here.
+            </p>
+
+            <a href="#" class="wellness-cta-btn">
+                Book Your Experience
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+    <section class="footer">
+      <footer class="site-footer">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <img
+              class="footer-logo"
+              src="assets/havenstay-logo-removebg.png"
+              alt="HavenStay"
+            />
+            <p class="footer-tagline">
+              Refined stays, curated for the way you travel.
+            </p>
+            <div class="footer-socials">
+              <a href="#" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="X"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="index1.html">Home</a></li>
+              <li><a href="">Rooms</a></li>
+              <li><a href="">Dining</a></li>
+              <li><a href="">Wellness</a></li>
+              <li><a href="">Gallery</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="">About Us</a></li>
+              <li><a href="">Meetings &amp; Events</a></li>
+              <li><a href="">Careers</a></li>
+              <li><a href="">Press</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="">Contact Us</a></li>
+              <li><a href="">FAQs</a></li>
+              <li><a href="">Cancellation Policy</a></li>
+              <li><a href="">Sign In / Join</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col footer-newsletter">
+            <h4>Stay in the Know</h4>
+            <p>Get offers and updates delivered straight to your inbox.</p>
+            <form class="newsletter-form" onsubmit="return false;">
+              <input type="email" placeholder="Enter your email" required />
+              <button type="submit" aria-label="Subscribe">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 HavenStay. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="">Privacy Policy</a>
+            <a href="">Terms of Service</a>
+            <a href="">Sitemap</a>
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <script src="utils.js"></script>
+    <script src="script1.js"></script>
+    <script src="wellness.js"></script>
+  </body>
+</html>
