@@ -61,29 +61,31 @@ const exploreData = {
 const featureCardsEl = document.getElementById("featureCards");
 const tabs = document.querySelectorAll(".tab");
 
-function renderCards(category) {
-  const cards = exploreData[category];
-  featureCardsEl.innerHTML = cards.map(card => `
-    <div class="feature-card" style="background-image: url('${card.img}')">
-      <div class="feature-arrow">&rarr;</div>
-      <div class="feature-card-content">
-        <div class="feature-tag">📍 ${card.tag}</div>
-        <h3>${card.title}</h3>
-        <p>${card.desc}</p>
+if (featureCardsEl && tabs.length) {
+  function renderCards(category) {
+    const cards = exploreData[category];
+    featureCardsEl.innerHTML = cards.map(card => `
+      <div class="feature-card" style="background-image: url('${card.img}')">
+        <div class="feature-arrow">&rarr;</div>
+        <div class="feature-card-content">
+          <div class="feature-tag">📍 ${card.tag}</div>
+          <h3>${card.title}</h3>
+          <p>${card.desc}</p>
+        </div>
       </div>
-    </div>
-  `).join("");
-}
+    `).join("");
+  }
 
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    tabs.forEach(t => t.classList.remove("active"));
-    tab.classList.add("active");
-    renderCards(tab.dataset.category);
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+      renderCards(tab.dataset.category);
+    });
   });
-});
 
-renderCards("poolside");
+  renderCards("poolside");
+}
 // Offers Section
 const offersData = [
   { title: "10,000 Points Across our Luxury Brands", img: "assets/offer-1.jpg" },
@@ -99,55 +101,59 @@ const dotsWrap = document.getElementById("offersDots");
 const prevBtn = document.getElementById("prevArrow");
 const nextBtn = document.getElementById("nextArrow");
 
-let currentIndex = 0;
-let visibleCards = 3;
-let maxIndex = 0;
+if (track && dotsWrap && prevBtn && nextBtn) {
+  let currentIndex = 0;
+  let visibleCards = 3;
+  let maxIndex = 0;
 
-function renderOffers() {
-  track.innerHTML = offersData.map(offer => `
-    <div class="offer-card" style="background-image: url('${offer.img}')">
-      <div class="offer-content">
-        <h3>${offer.title}</h3>
-        <div class="offer-arrow">&rsaquo;</div>
+  function renderOffers() {
+    track.innerHTML = offersData.map(offer => `
+      <div class="offer-card" style="background-image: url('${offer.img}')">
+        <div class="offer-content">
+          <h3>${offer.title}</h3>
+          <div class="offer-arrow">&rsaquo;</div>
+        </div>
       </div>
-    </div>
-  `).join("");
+    `).join("");
 
-  dotsWrap.innerHTML = "";
-  maxIndex = offersData.length - Math.floor(visibleCards);
-  for (let i = 0; i <= maxIndex; i++) {
-    const dot = document.createElement("button");
-    dot.className = "dot" + (i === 0 ? " active" : "");
-    dot.addEventListener("click", () => goTo(i));
-    dotsWrap.appendChild(dot);
+    dotsWrap.innerHTML = "";
+    maxIndex = offersData.length - Math.floor(visibleCards);
+    for (let i = 0; i <= maxIndex; i++) {
+      const dot = document.createElement("button");
+      dot.className = "dot" + (i === 0 ? " active" : "");
+      dot.addEventListener("click", () => goTo(i));
+      dotsWrap.appendChild(dot);
+    }
   }
-}
 
-function updateSlider() {
-  const card = track.querySelector(".offer-card");
-  const gap = 20;
-  const step = card.offsetWidth + gap;
-  track.style.transform = `translateX(-${currentIndex * step}px)`;
+  function updateSlider() {
+    const card = track.querySelector(".offer-card");
+    if (!card) return;
 
-  [...dotsWrap.children].forEach((dot, i) => {
-    dot.classList.toggle("active", i === currentIndex);
-  });
+    const gap = 20;
+    const step = card.offsetWidth + gap;
+    track.style.transform = `translateX(-${currentIndex * step}px)`;
 
-  prevBtn.disabled = currentIndex === 0;
-  nextBtn.disabled = currentIndex === maxIndex;
-}
+    [...dotsWrap.children].forEach((dot, i) => {
+      dot.classList.toggle("active", i === currentIndex);
+    });
 
-function goTo(index) {
-  currentIndex = Math.max(0, Math.min(index, maxIndex));
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex === maxIndex;
+  }
+
+  function goTo(index) {
+    currentIndex = Math.max(0, Math.min(index, maxIndex));
+    updateSlider();
+  }
+
+  prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
+  nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
+  window.addEventListener("resize", updateSlider);
+
+  renderOffers();
   updateSlider();
 }
-
-prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
-nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
-window.addEventListener("resize", updateSlider);
-
-renderOffers();
-updateSlider();
 
 // Hamburger Menu
 const menuToggle = document.getElementById('menu-toggle');

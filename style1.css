@@ -3643,7 +3643,375 @@ body {
   }
 
 }
+/* =========================
+   Gallery Page
+   ========================= */
+   /* Gallery */
 
+   /* Gallery Lightbox */
+.ari-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(11,37,69,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.ari-lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+body.ari-lightbox-open {
+  overflow: hidden;
+}
+
+.ari-lightbox-img {
+  max-width: 85vw;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+
+.ari-lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.ari-lightbox-close:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.ari-lightbox-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.ari-lightbox-arrow:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.ari-lightbox-prev { left: 24px; }
+.ari-lightbox-next { right: 24px; }
+
+.ari-lightbox-counter {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #d8dce6;
+  font-family: var(--font-body);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 700px) {
+  .ari-lightbox-arrow {
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
+
+  .ari-lightbox-prev { left: 12px; }
+  .ari-lightbox-next { right: 12px; }
+
+  .ari-lightbox-close {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .ari-lightbox-img {
+    max-width: 92vw;
+    max-height: 78vh;
+  }
+}
+.ari-gallery {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 60px 100px;
+}
+
+.ari-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.ari-gallery-grid img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  box-shadow: 0 10px 30px rgba(11,37,69,0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.ari-gallery-grid img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(11,37,69,0.18);
+}
+
+@media (max-width: 900px) {
+  .ari-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .ari-gallery {
+    padding: 40px 24px 60px;
+  }
+}
+
+@media (max-width: 560px) {
+  .ari-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* =========================
+   About Page
+   ========================= */
+/* About — Our Story */
+.ari-about-story {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  max-width: 1300px;
+  margin: 60px auto 100px;
+  padding: 0 24px;
+}
+
+.ari-about-image {
+  flex: 0 0 45%;
+}
+
+.ari-about-image img {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+}
+
+.ari-about-content {
+  flex: 1;
+}
+
+.ari-about-content h2 {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--hs-navy);
+  line-height: 1.25;
+  margin: 20px 0 24px;
+}
+
+.ari-about-content > p {
+  font-size: 15px;
+  color: #6b6b6b;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+
+.ari-about-checklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.ari-about-check-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: var(--hs-navy);
+  font-size: 15px;
+}
+
+.ari-about-check-item i {
+  color: var(--hs-gold);
+  font-size: 17px;
+}
+
+/* About — Our Impact */
+.ari-about-impact {
+  background: #f7f5ef;
+  padding: 90px 24px;
+}
+
+.ari-about-impact-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 56px;
+}
+
+.ari-about-impact-header h2 {
+  font-family: var(--font-display);
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--hs-navy);
+  margin: 20px 0 16px;
+}
+
+.ari-about-impact-header p {
+  font-size: 15px;
+  color: #6b6b6b;
+}
+
+.ari-impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.ari-impact-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 40px 24px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(11,37,69,0.08);
+}
+
+.ari-impact-card i {
+  font-size: 30px;
+  color: var(--hs-gold);
+  margin-bottom: 18px;
+  display: block;
+}
+
+.ari-impact-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--hs-navy);
+  margin-bottom: 8px;
+}
+
+.ari-impact-label {
+  font-size: 14px;
+  color: #6b6b6b;
+}
+
+/* About — Our Values */
+.ari-about-values {
+  padding: 90px 24px 110px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.ari-values-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.ari-value-card {
+  text-align: center;
+  padding: 20px;
+}
+
+.ari-value-icon {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: #f0ede2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 22px;
+}
+
+.ari-value-icon i {
+  font-size: 26px;
+  color: var(--hs-gold);
+}
+
+.ari-value-card h3 {
+  font-family: var(--font-display);
+  font-size: 19px;
+  color: var(--hs-navy);
+  margin-bottom: 12px;
+}
+
+.ari-value-card p {
+  font-size: 14px;
+  color: #6b6b6b;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .ari-about-story {
+    flex-direction: column;
+    margin: 40px auto 60px;
+  }
+
+  .ari-about-image img {
+    height: 320px;
+  }
+
+  .ari-about-checklist {
+    grid-template-columns: 1fr;
+  }
+
+  .ari-impact-grid,
+  .ari-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ari-about-impact,
+  .ari-about-values {
+    padding: 60px 24px;
+  }
+
+  .ari-about-content h2,
+  .ari-about-impact-header h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 560px) {
+  .ari-impact-grid,
+  .ari-values-grid {
+    grid-template-columns: 1fr;
+  }
+}
 /* =========================
    Cart / Bookings Page
    ========================= */

@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HavenStay</title>
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Jost:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index1.html">
+        <img class="logo" src="assets/havenstay-logo-gold.png" alt="" />
+      </a>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index1.html">Home</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="dining.html">Dining</a></li>
+        <li><a href="wellness.html">Wellness</a></li>
+        <li><a href="meetings.html">Meetings &amp; Events</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <!-- Visible before login -->
+        <div id="guest-links" class="nav-group">
+          <a href="auth.html" class="auth-link"> Sign In </a>
+        </div>
+
+        <!-- Visible after login -->
+        <div id="user-links" class="nav-group hidden">
+          <span id="welcome-user" class="welcome-user">
+            <i class="fa-solid fa-user"></i>
+          </span>
+          <a href="bookings.html" class="cart-link">
+            Bookings
+            <span id="cart-count">0</span>
+          </a>
+
+          <a href="#" id="logout-btn">Logout</a>
+        </div>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <section class="page-hero" style="background-image: url('assets/Hero-7.jpg')">
+  <div class="page-hero-content">
+    <span class="page-hero-eyebrow">Gallery</span>
+    <h1>A Closer Look at HavenStay</h1>
+    <p>Explore our rooms, dining venues, and amenities through the lens.</p>
+  </div>
+</section>
+
+<section class="ari-gallery">
+  <div class="ari-gallery-grid">
+    <img src="assets/Gallery-1.jpg" alt="HavenStay lobby">
+    <img src="assets/Gallery-2.jpg" alt="Deluxe Garden Room">
+    <img src="assets/Gallery-3.jpg" alt="Haven Restaurant interior">
+    <img src="assets/Gallery-4.jpg" alt="Rooftop Sky Lounge">
+    <img src="assets/Gallery-5.jpg" alt="Poolside seating area">
+    <img src="assets/Gallery-6.jpg" alt="Executive Suite bedroom">
+    <img src="assets/Gallery-7.jpg" alt="Spa treatment room">
+    <img src="assets/Gallery-8.jpg" alt="Meetings and events space">
+    <img src="assets/Gallery-9.jpg" alt="HavenStay exterior at night">
+    <img src="assets/Gallery-10.jpg" alt="HavenStay exterior at night">
+    <img src="assets/Gallery-11.jpg" alt="HavenStay exterior at night">
+    <img src="assets/Gallery-12.jpg" alt="HavenStay exterior at night">
+    <img src="assets/Gallery-13.jpg" alt="HavenStay exterior at night">
+    <img src="assets/Gallery-14.jpg" alt="HavenStay exterior at night">
+    <img src="assets/Gallery-15.jpg" alt="HavenStay exterior at night">
+    <img src="assets/Gallery-16.jpg" alt="HavenStay exterior at night">
+    <img src="assets/Gallery-17.jpg" alt="HavenStay exterior at night">
+    <img src="assets/Gallery-18.jpg" alt="HavenStay exterior at night">
+    <img src="assets/Gallery-19.jpg" alt="HavenStay exterior at night">
+    <img src="assets/Gallery-20.jpg" alt="HavenStay exterior at night">
+    <img src="assets/Gallery-21.jpg" alt="HavenStay exterior at night">
+    <img src="assets/Gallery-22.jpg" alt="HavenStay exterior at night">
+    <img src="assets/Gallery-23.jpg" alt="HavenStay exterior at night">
+    <img src="assets/Gallery-24.jpg" alt="HavenStay exterior at night">
+
+
+  </div>
+</section>
+
+<div class="ari-lightbox" id="ari-lightbox">
+  <button class="ari-lightbox-close" id="ari-lightbox-close" aria-label="Close">
+    <i class="fa-solid fa-xmark"></i>
+  </button>
+
+  <button class="ari-lightbox-arrow ari-lightbox-prev" id="ari-lightbox-prev" aria-label="Previous image">
+    <i class="fa-solid fa-chevron-left"></i>
+  </button>
+
+  <img src="" alt="" id="ari-lightbox-img" class="ari-lightbox-img">
+
+  <button class="ari-lightbox-arrow ari-lightbox-next" id="ari-lightbox-next" aria-label="Next image">
+    <i class="fa-solid fa-chevron-right"></i>
+  </button>
+
+  <div class="ari-lightbox-counter" id="ari-lightbox-counter"></div>
+</div>
+
+<section class="footer">
+      <footer class="site-footer">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <img
+              class="footer-logo"
+              src="assets/havenstay-logo-removebg.png"
+              alt="HavenStay"
+            />
+            <p class="footer-tagline">
+              Refined stays, curated for the way you travel.
+            </p>
+            <div class="footer-socials">
+              <a href="#" aria-label="Instagram"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="Facebook"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a href="#" aria-label="X"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul>
+              <li><a href="index1.html">Home</a></li>
+              <li><a href="">Rooms</a></li>
+              <li><a href="">Dining</a></li>
+              <li><a href="">Wellness</a></li>
+              <li><a href="">Gallery</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="">About Us</a></li>
+              <li><a href="">Meetings &amp; Events</a></li>
+              <li><a href="">Careers</a></li>
+              <li><a href="">Press</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Support</h4>
+            <ul>
+              <li><a href="">Contact Us</a></li>
+              <li><a href="">FAQs</a></li>
+              <li><a href="">Cancellation Policy</a></li>
+              <li><a href="">Sign In / Join</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col footer-newsletter">
+            <h4>Stay in the Know</h4>
+            <p>Get offers and updates delivered straight to your inbox.</p>
+            <form class="newsletter-form" onsubmit="return false;">
+              <input type="email" placeholder="Enter your email" required />
+              <button type="submit" aria-label="Subscribe">
+                <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2026 HavenStay. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="">Privacy Policy</a>
+            <a href="">Terms of Service</a>
+            <a href="">Sitemap</a>
+          </div>
+        </div>
+      </footer>
+    </section>
+    <script src="utils.js"></script>
+    <script src="script1.js"></script>
+    <script src="gallery.js"></script>
+    
+  </body>
+</html>
