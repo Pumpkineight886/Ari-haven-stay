@@ -6,8 +6,10 @@ const ariLightboxClose = document.getElementById("ari-lightbox-close");
 const ariLightboxPrev = document.getElementById("ari-lightbox-prev");
 const ariLightboxNext = document.getElementById("ari-lightbox-next");
 
+// Current index of the image being displayed in the lightbox
 let ariCurrentIndex = 0;
 
+// Function to open the lightbox with the selected image
 function ariOpenLightbox(index) {
   ariCurrentIndex = index;
   ariUpdateLightboxImage();
@@ -15,11 +17,13 @@ function ariOpenLightbox(index) {
   document.body.classList.add("ari-lightbox-open");
 }
 
+// Function to close the lightbox
 function ariCloseLightbox() {
   ariLightbox.classList.remove("active");
   document.body.classList.remove("ari-lightbox-open");
 }
 
+// Function to update the lightbox image and counter
 function ariUpdateLightboxImage() {
   const img = ariGalleryImages[ariCurrentIndex];
   ariLightboxImg.src = img.src;
@@ -27,21 +31,25 @@ function ariUpdateLightboxImage() {
   ariLightboxCounter.textContent = `${ariCurrentIndex + 1} / ${ariGalleryImages.length}`;
 }
 
+// Function to show the previous image in the lightbox
 function ariShowPrev() {
   ariCurrentIndex = (ariCurrentIndex - 1 + ariGalleryImages.length) % ariGalleryImages.length;
   ariUpdateLightboxImage();
 }
 
+// Function to show the next image in the lightbox
 function ariShowNext() {
   ariCurrentIndex = (ariCurrentIndex + 1) % ariGalleryImages.length;
   ariUpdateLightboxImage();
 }
 
+// Add click event listeners to each gallery image
 ariGalleryImages.forEach((img, index) => {
   img.style.cursor = "pointer";
   img.addEventListener("click", () => ariOpenLightbox(index));
 });
 
+// Add event listeners for lightbox controls
 ariLightboxClose.addEventListener("click", ariCloseLightbox);
 ariLightboxPrev.addEventListener("click", ariShowPrev);
 ariLightboxNext.addEventListener("click", ariShowNext);

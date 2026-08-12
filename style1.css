@@ -1469,6 +1469,10 @@ body {
   font-size: 15px;
 }
 
+.welcome-user i {
+  margin-right: 8px;
+}
+
 .cart-link {
   position: relative;
   color: var(--hs-gold);
