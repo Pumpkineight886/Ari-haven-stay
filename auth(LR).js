@@ -61,7 +61,7 @@ if (registerForm) {
         users.push(user);
         // Save all users
         localStorage.setItem("havenUsers", JSON.stringify(users));
-        alert("Registration successful!");
+        queueToast("Registration successful! Please sign in.");
         localStorage.removeItem("loggedIn");
         localStorage.removeItem("currentUser");
         window.location.href = "auth.html";
@@ -97,7 +97,7 @@ if (loginForm) {
 
         // Save who logged in
         localStorage.setItem("currentUser", JSON.stringify(user));
-        alert("Login successful!");
+        queueToast(`Welcome back, ${user.name}!`);
         window.location.href = "index1.html";
     });
 }

@@ -101,3 +101,21 @@ if (logoutBtn) {
         window.location.href = "index1.html";
     });
 }
+
+// Add to utils.js
+
+// Queues a toast message to be shown after the next page loads.
+function queueToast(message) {
+  sessionStorage.setItem("pendingToast", message);
+}
+
+// Checks for a queued toast on page load and displays it once.
+function showPendingToast() {
+  const message = sessionStorage.getItem("pendingToast");
+  if (message) {
+    showToast(message);
+    sessionStorage.removeItem("pendingToast");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", showPendingToast);
