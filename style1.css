@@ -17,7 +17,7 @@ body {
   --font-body: "Jost", "Helvetica Neue", Arial, sans-serif;
   --hs-navy: #0b2545;
   --hs-gold: #c9a24b;
-  --navbar-height: 110px;
+  --navbar-height: 90px;
   --searchbox-top: 140px;
   --searchbox-height: 100px;
   --hero-clearance: calc(
@@ -141,10 +141,11 @@ body {
 .hero-overlay {
   position: relative;
   z-index: 5;
-  padding: 0 60px;
   max-width: 560px;
   color: #fff;
   text-align: left;
+  padding: 20px 56px;
+  transform: translateY(-20px);
 }
 
 /* Dark Overlay Over Hero Image */
@@ -155,23 +156,30 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.4);
   z-index: 1;
 }
 
 /* Hero Main Heading */
 .hero-title {
   font-family: var(--font-display);
-  font-size: 48px;
-  font-weight: 600;
+  font-size: 50px;
+  font-weight: 700;
   margin-bottom: 16px;
   color: var(--hs-gold);
+  background: rgba(0, 0, 0, 0.38);
+  border: 0px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(1px);
+  padding: 10px;
 }
 
 /* Hero Description */
 .hero-subtitle {
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: 700;
   margin-bottom: 28px;
   color: #f0ede6;
 }
@@ -1118,7 +1126,6 @@ body {
    LOGIN / REGISTER PAGE
    ===================================================== */
 
-/*
 .hidden {
   display: none;
 }
@@ -1168,69 +1175,98 @@ body {
   background: rgba(255,255,255,.08);
 }
 
+.auth-content .section-title,
+.auth-subtitle {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
 .auth-content .section-title {
   text-align: center;
   margin-bottom: 40px;
+  color: #fff;
 }
 
 .auth-form {
-  width: 100%;
-  margin: 0 auto;
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
-  padding: 0;
-  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
+  display: flex;
+  gap: 16px;
 }
 
-.auth-form input {
-  width: 100%;
-  padding: 16px 18px;
-  background: rgba(35, 35, 35, 0.5);
-  border: 1px solid rgba(255,255,255,.25);
-  border-radius: 14px;
-  backdrop-filter: blur(12px);
+.form-row .form-group {
+  flex: 1;
+  min-width: 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
   color: #fff;
-  transition: .3s ease;
+  letter-spacing: 0.3px;
 }
 
-.auth-form input::placeholder {
-  color: rgba(255,255,255,.7);
-}
-
-.auth-form input:focus {
+.form-group input {
+  border:1px solid rgba(255,255,255,.25);
+  border-radius: 8px;
+  background:rgba(35, 35, 35, 0.5);
+  padding: 13px 16px;
+  font-family: var(--font-body);
+  font-size: 17px;
+  color: #fff;
   outline: none;
-  border-color: var(--color-green);
-  box-shadow: 0 0 18px rgba(32, 237, 22, 0.35);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.auth-form label {
-  color: #fff;
+.form-group input::placeholder {
+  color: #a9a9a9;
 }
 
-.auth-content h2 {
-  color: #fff;
+.form-group input:focus {
+  border-color: var(--hs-gold);
+  box-shadow: 0 0 0 3px rgba(201,162,75,0.18);
 }
 
-.section-title .auth-subtitle {
-  color: rgba(255,255,255,.85);
-  font-size: 1.2rem;
+.form-group input.invalid {
+  border-color: #d64545;
+}
+
+.form-error {
+  display: none;
+  font-size: 12.5px;
+  color: #d64545;
+}
+
+.form-group input.invalid + .form-error,
+.form-error.visible {
+  display: block;
 }
 
 .auth-btn {
   width: 100%;
-  background: linear-gradient(
-    135deg,
-    var(--color-green),
-    var(--color-green-dark)
-  );
   border: none;
+  background: var(--hs-navy);
+  color: #fff;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 15px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.auth-btn:hover {
+  background: #13315c;
+  transform: translateY(-1px);
 }
 
 .auth-switch {
@@ -1249,31 +1285,6 @@ body {
   text-decoration: underline;
 }
 
-.form-group {
-  margin-bottom: 16px;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 6px;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.form-group input,
-.form-group textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid #dbe2e4;
-  border-radius: 6px;
-  font-size: 0.95rem;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-  outline: 2px solid var(--color-green);
-}
-
 .form-error {
   color: #d9534f;
   font-size: 0.8rem;
@@ -1289,12 +1300,12 @@ body {
   margin-top: 14px;
   display: none;
 }
-*/
+
 
 /* ===================
    Auth / Login-Register
    =================== */
-
+/*
 .hidden {
   display: none !important;
 }
@@ -1340,7 +1351,7 @@ body {
 
 /* ===================
    Auth Form
-   =================== */
+   =================== 
 
 .auth-form {
   display: flex;
@@ -1409,7 +1420,7 @@ body {
 
 /* ===================
    Auth Button
-   =================== */
+   =================== 
 
 .auth-btn {
   width: 100%;
@@ -1445,7 +1456,7 @@ body {
 
 .auth-switch .auth-link:hover {
   text-decoration: underline;
-}
+}*/
 
 
 /* ===================
@@ -1531,6 +1542,14 @@ body {
 .ari-rooms-hero {
   text-align: center;
   padding: 160px 24px 40px;
+}
+
+.page-hero-content{
+    display: inline-block;
+    padding:20px 35px;
+    background: rgba(30,42,47,.40);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 16px;
 }
 
 .ari-rooms-hero h1 {
@@ -1746,34 +1765,38 @@ body {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(11,37,69,0.55);
+  background: rgba(11,37,69,0.4);
 }
 
 .page-hero-content {
   position: relative;
   z-index: 1;
   max-width: 640px;
-  padding: 0 24px;
 }
 
 .page-hero-eyebrow {
-  display: block;
-  font-size: 13px;
+  display: inline-block;
+  font-size: 18px;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--hs-gold);
   margin-bottom: 14px;
+  padding:8px 18px;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:30px;
+  backdrop-filter:blur(8px);
 }
 
 .page-hero h1 {
   font-family: var(--font-display);
   font-size: 42px;
-  font-weight: 600;
+  font-weight: 800;
   margin-bottom: 14px;
 }
 
 .page-hero p {
-  font-size: 16px;
+  font-size: 20px;
   color: #e8e5dd;
   line-height: 1.5;
 }
@@ -1786,7 +1809,7 @@ body {
 .ari-dining-intro {
   display: flex;
   gap: 0;
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 60px auto 100px;
   background: #fff;
   border-radius: 16px;
@@ -1817,13 +1840,13 @@ body {
 .ari-dining-badge {
   display: inline-block;
   align-self: flex-start;
-  border: 1px solid var(--hs-gold);
+  border: 2px solid var(--hs-gold);
   color: var(--hs-gold);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 8px 18px;
+  padding: 18px;
   border-radius: 999px;
   margin-bottom: 24px;
 }
@@ -1844,15 +1867,13 @@ body {
   max-width: 440px;
 }
 
-
 /* Dining Features */
 
 .ari-dining-features {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 28px 20px;
+  gap: 0;
   margin-bottom: 40px;
-  padding-bottom: 4px;
 }
 
 .ari-dining-feature {
@@ -1861,22 +1882,30 @@ body {
   align-items: center;
   text-align: center;
   gap: 10px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid #eee;
+  padding: 28px 20px;
 }
 
 .ari-dining-feature i {
-  font-size: 26px;
+  font-size: 2.4rem;
   color: var(--hs-gold);
 }
 
 .ari-dining-feature span {
   font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 14px;
+  font-weight: 670;
+  font-size: 16px;
   color: var(--hs-navy);
 }
 
+/* Vertical line */
+.ari-dining-feature:nth-child(odd){
+    border-right:1.5px solid rgba(0,0,0,.08);
+}
+
+/* Horizontal line */
+.ari-dining-feature:nth-child(-n+2){
+    border-bottom:1.5px solid rgba(0,0,0,.08);
+}
 
 /* Dining CTA Button */
 
@@ -1888,7 +1917,7 @@ body {
   font-weight: 600;
   font-size: 15px;
   text-decoration: none;
-  padding: 14px 40px;
+  padding: 18px 44px;
   border-radius: 999px;
   transition: background 0.2s ease, color 0.2s ease;
 }
@@ -1925,21 +1954,52 @@ body {
   }
 }
 
+/* =========================
+   Responsive CTA
+   ========================= */
+
+@media (max-width: 768px) {
+
+  .ari-dining-cta {
+    font-size: 14px;
+    padding: 16px 34px;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .ari-dining-cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    max-width: 280px;
+
+    margin: 0 auto;
+
+    font-size: 14px;
+    padding: 15px 24px;
+  }
+
+}
 
 /* =========================
    Restaurants Section
    ========================= */
 
 .ari-restaurants {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 20px 60px 100px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 70px 60px;
+    background: #f8fafc;
 }
 
 .ari-restaurants-header {
   text-align: center;
   max-width: 640px;
-  margin: 0 auto 56px;
+  margin: 0 auto 60px;
 }
 
 .ari-restaurants-header .ari-dining-badge {
@@ -1948,7 +2008,7 @@ body {
 
 .ari-restaurants-header h2 {
   font-family: var(--font-display);
-  font-size: 36px;
+  font-size: 42px;
   font-weight: 600;
   color: var(--hs-navy);
   line-height: 1.25;
@@ -1956,7 +2016,7 @@ body {
 }
 
 .ari-restaurants-header p {
-  font-size: 15px;
+  font-size: 17px;
   color: #6b6b6b;
   line-height: 1.6;
 }
@@ -1967,24 +2027,24 @@ body {
 .ari-restaurant-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
+  gap: 35px;
 }
 
 .ari-restaurant-card {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(11,37,69,0.1);
+  box-shadow:0 15px 35px rgba(0,0,0,.08);
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .ari-restaurant-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 40px rgba(11,37,69,0.16);
+  transform: translateY(-10px);
+  box-shadow:0 25px 45px rgba(0,0,0,.12);
 }
 
 .ari-restaurant-image {
-  height: 220px;
+  height: 320px;
 }
 
 .ari-restaurant-image img {
@@ -1995,48 +2055,47 @@ body {
 }
 
 .ari-restaurant-content {
-  padding: 26px;
+  padding: 30px;
 }
 
 .ari-restaurant-content h3 {
   font-family: var(--font-display);
   font-size: 21px;
   color: var(--hs-navy);
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .ari-restaurant-content > p {
-  font-size: 14px;
+  font-size: 16px;
   color: #6b6b6b;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  line-height: 1.8;
+  margin-bottom: 25px;
 }
 
 
 /* Restaurant Tags */
 
-.ari-restaurant-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 22px;
+.ari-restaurant-tags{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    margin-bottom:30px;
 }
 
-.ari-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  background: #f6f4ee;
-  color: var(--hs-navy);
-  font-size: 12.5px;
-  font-weight: 600;
-  padding: 7px 14px;
-  border-radius: 999px;
+.ari-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:#f7f7f7;
+    padding:10px 16px;
+    border-radius:50px;
+    width:fit-content;
+    font-size:14.5px;
 }
 
 .ari-tag i {
   color: var(--hs-gold);
-  font-size: 12px;
+  font-size: 16px;
 }
 
 
@@ -2048,7 +2107,7 @@ body {
   gap: 6px;
   color: var(--hs-gold);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px;
   text-decoration: none;
 }
 
@@ -2056,8 +2115,12 @@ body {
   transition: transform 0.2s ease;
 }
 
-.ari-read-more:hover span {
-  transform: translateX(4px);
+.ari-read-more{
+    transition:.3s ease;
+}
+
+.ari-read-more:hover{
+    gap:14px;
 }
 
 
@@ -2077,6 +2140,269 @@ body {
   }
 }
 
+/*=====================================================
+                SIGNATURE DISHES
+=====================================================*/
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: 0 auto;
+}
+
+.signature-dishes{
+    padding:70px 0;
+}
+
+.section-tag{
+  display: inline-block;
+  align-self: flex-start;
+  border: 2px solid var(--hs-gold);
+  color: var(--hs-gold);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 18px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+
+.section-header{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 70px;
+}
+
+.section-header h2{
+    font-size:2.7rem;
+    margin:15px 0 20px;
+}
+
+.section-header p{
+    color:#666;
+    line-height:1.8;
+}
+
+.dish-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+}
+
+.dish-card{
+    background:#fff;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+    transition:.35s ease;
+}
+
+.dish-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 25px 45px rgba(0,0,0,.12);
+}
+
+.dish-card img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    display:block;
+}
+
+.dish-content{
+    padding:28px;
+}
+
+.dish-category{
+    display:inline-block;
+    color:var(--hs-gold);
+    font-size:.78rem;
+    font-weight:700;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.dish-content h3{
+    margin-bottom:18px;
+    color:var(--hs-navy);
+    font-size:1.45rem;
+}
+
+.dish-content p{
+    color:#666;
+    line-height:1.8;
+    margin-bottom:28px;
+}
+
+.dish-divider{
+    width:55px;
+    height:2px;
+    background:var(--hs-gold);
+    border-radius:20px;
+    margin-bottom:22px;
+}
+
+.price-label{
+    display:block;
+    color:#999;
+    font-size:.85rem;
+    margin-bottom:5px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.dish-price{
+    font-size:1.6rem;
+    font-weight:700;
+    color:var(--hs-gold);
+}
+
+.menu-btn{
+    display:block;
+    width:fit-content;
+    margin:60px auto 0;
+    background:transparent;
+    color:var(--hs-navy);
+    border:2px solid var(--hs-gold);
+    padding:14px 34px;
+    border-radius:50px;
+    transition:.3s ease;
+}
+
+.menu-btn:hover{
+    background:var(--hs-gold);
+    color:#fff;
+}
+
+/* =====================================================
+   SIGNATURE DISHES RESPONSIVE
+   ===================================================== */
+
+/* Tablets */
+
+@media (max-width: 992px) {
+
+    .signature-dishes{
+        padding: 60px 0;
+    }
+
+    .section-header{
+        margin: 0 auto 55px;
+        padding: 0 20px;
+    }
+
+    .section-header h2{
+        font-size: 2.2rem;
+    }
+
+    .section-header p{
+        font-size: 15px;
+    }
+
+    .dish-grid{
+        grid-template-columns: repeat(2,1fr);
+        gap: 28px;
+    }
+
+    .dish-card img{
+        height: 260px;
+    }
+
+    .dish-content{
+        padding: 24px;
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .container{
+        width: 92%;
+    }
+
+    .section-tag{
+        font-size: 13px;
+        padding: 14px 16px;
+        letter-spacing: 1.5px;
+    }
+
+    .section-header{
+        margin-bottom: 45px;
+    }
+
+    .section-header h2{
+        font-size: 1.9rem;
+    }
+
+    .section-header p{
+        font-size: 14px;
+        line-height: 1.7;
+    }
+
+    .dish-grid{
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .dish-card img{
+        height: 240px;
+    }
+
+    .dish-content{
+        padding: 22px;
+    }
+
+    .dish-content h3{
+        font-size: 1.3rem;
+    }
+
+    .dish-content p{
+        font-size: 14px;
+        margin-bottom: 24px;
+    }
+
+    .dish-price{
+        font-size: 1.4rem;
+    }
+
+    .menu-btn{
+        margin-top: 45px;
+        padding: 13px 28px;
+        font-size: 14px;
+    }
+
+}
+
+
+/* Small Phones */
+
+@media (max-width: 480px){
+
+    .signature-dishes{
+        padding: 50px 0;
+    }
+
+    .section-header h2{
+        font-size: 1.7rem;
+    }
+
+    .dish-card{
+        border-radius: 18px;
+    }
+
+    .dish-card img{
+        height: 220px;
+    }
+
+    .dish-content{
+        padding: 20px;
+    }
+
+}
 
 /* =========================
    Chefs Section
@@ -2085,7 +2411,8 @@ body {
 .ari-chefs {
   max-width: 1300px;
   margin: 0 auto;
-  padding: 20px 60px 110px;
+  padding: 50px 60px 110px;
+  background: #f8fafc;;
 }
 
 .ari-chefs-header {
@@ -2160,6 +2487,93 @@ body {
   text-transform: uppercase;
 }
 
+/*=====================================================
+                EXECUTIVE CHEF
+=====================================================*/
+
+.executive-chef{
+    padding:160px 30px 0 0;
+    background:#faf8f4;
+}
+
+.chef-card{
+    display:grid;
+    grid-template-columns:420px 1fr;
+    align-items:center;
+    gap:70px;
+}
+
+.chef-image img{
+    width:100%;
+    height:520px;
+    object-fit:cover;
+    border-radius:24px;
+    display:block;
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+.chef-content h2{
+    font-size:2.6rem;
+    margin:18px 0 35px;
+}
+
+.chef-content blockquote{
+    font-size:1.25rem;
+    line-height:2;
+    color:#555;
+    font-style:italic;
+    margin-bottom:45px;
+    position:relative;
+    padding-left:35px;
+}
+
+.chef-content blockquote::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:8px;
+    width:6px;
+    height:85%;
+    background:var(--hs-gold);
+    border-radius:20px;
+}
+
+.chef-details h4{
+    font-size:1.4rem;
+    margin-bottom:8px;
+}
+
+.chef-details span{
+    color:#888;
+    letter-spacing:1px;
+}
+
+.chef-role{
+    display:block;
+    color:#888;
+    letter-spacing:1px;
+    margin-bottom:18px;
+}
+
+.chef-experience{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:#fff;
+    padding:12px 20px;
+    border-radius:50px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.chef-experience i{
+    color:var(--hs-gold);
+    font-size:1.1rem;
+}
+
+.chef-experience span{
+    color:var(--hs-navy);
+    font-weight:600;
+}
 
 /* =========================
    Chefs Section - Tablet
@@ -2188,6 +2602,159 @@ body {
   }
 }
 
+/* =====================================================
+   EXECUTIVE CHEF RESPONSIVE
+   ===================================================== */
+
+/* Tablets */
+
+@media (max-width: 992px) {
+
+    .executive-chef{
+        padding:100px 24px 0;
+    }
+
+    .chef-card{
+        grid-template-columns:1fr;
+        gap:50px;
+    }
+
+    .chef-image{
+        max-width:500px;
+        margin:0 auto;
+    }
+
+    .chef-image img{
+        height:460px;
+    }
+
+    .chef-content{
+        text-align:center;
+    }
+
+    .chef-content h2{
+        font-size:2.2rem;
+        margin:18px 0 28px;
+    }
+
+    .chef-content blockquote{
+        padding-left:0;
+        font-size:1.15rem;
+        margin-bottom:35px;
+    }
+
+    .chef-content blockquote::before{
+        display:none;
+    }
+
+    .chef-details{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+}
+
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .executive-chef{
+        padding:80px 20px 0;
+    }
+
+    .chef-card{
+        gap:40px;
+    }
+
+    .chef-image img{
+        height:380px;
+        border-radius:20px;
+    }
+
+    .chef-content h2{
+        font-size:1.9rem;
+    }
+
+    .chef-content blockquote{
+        font-size:1rem;
+        line-height:1.9;
+    }
+
+    .chef-details h4{
+        font-size:1.25rem;
+    }
+
+    .chef-role,
+    .chef-details span{
+        font-size:14px;
+    }
+
+    .chef-experience{
+        padding:10px 18px;
+    }
+
+    .chef-experience span{
+        font-size:14px;
+    }
+
+        .chef-card{
+        grid-template-columns: 1fr;
+    }
+
+    .chef-content{
+        order: 1;
+    }
+
+    .chef-image{
+        order: 2;
+    }
+
+}
+
+
+/* Small Phones */
+
+@media (max-width:480px){
+
+    .executive-chef{
+        padding:70px 16px 0;
+    }
+
+    .chef-image img{
+        height:300px;
+    }
+
+    .chef-content h2{
+        font-size:1.7rem;
+    }
+
+    .chef-content blockquote{
+        font-size:.95rem;
+        line-height:1.8;
+    }
+
+    .chef-details h4{
+        font-size:1.15rem;
+    }
+
+    .chef-experience{
+        width:100%;
+        justify-content:center;
+    }
+    .chef-card{
+        grid-template-columns: 1fr;
+    }
+
+    .chef-content{
+        order: 1;
+    }
+
+    .chef-image{
+        order: 2;
+    }
+}
 
 /* =========================
    Opening Hours
@@ -2196,7 +2763,7 @@ body {
 .ari-hours {
   max-width: 900px;
   margin: 0 auto;
-  padding: 20px 24px 120px;
+  padding: 60px 24px 120px;
 }
 
 .ari-hours-header {
@@ -2224,7 +2791,9 @@ body {
 .ari-hours-card {
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(11, 37, 69, 0.1);
+  box-shadow:
+    0 0 35px rgba(212,175,55,.28),
+    0 18px 45px rgba(0,0,0,.10);
   padding: 8px 44px;
 }
 
@@ -3812,7 +4381,7 @@ body.ari-lightbox-open {
   gap: 60px;
   max-width: 1300px;
   margin: 60px auto 100px;
-  padding: 0 24px;
+  padding: 30px 60px;
 }
 
 .ari-about-image {
@@ -4753,4 +5322,24 @@ body.ari-lightbox-open {
   .nav-links {
     top: var(--navbar-height);
   }
+}
+
+.hidden{
+    display: none !important;
+}
+
+/* Chrome Autofill Fix */
+
+.auth-form input:-webkit-autofill,
+.auth-form input:-webkit-autofill:hover,
+.auth-form input:-webkit-autofill:focus,
+.auth-form input:-webkit-autofill:active{
+
+    -webkit-box-shadow:0 0 0 1000px rgba(91,88,88,0.5) inset !important;
+
+    -webkit-text-fill-color:#fff !important;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    transition:background-color 9999s ease-in-out 0s;
 }

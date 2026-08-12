@@ -25,6 +25,22 @@ const ariRoomsData = [
   },
   {
     id: "r4",
+    name: "Ocean View Room",
+    type: "Deluxe",
+    price: 70000,
+    img: "assets/oceanview-room.jpg",
+    desc: "Wake up to a beautiful view every morning. Includes a private balcony."
+  },
+  {
+    id: "r5",
+    name: "Presidential Suite",
+    type: "Suite",
+    price: 200000,
+    img: "assets/presidential-room.jpg",
+    desc: "Our top-tier suite with a private jacuzzi, dining area and 24-hour butler."
+  },
+  {
+    id: "r6",
     name: "Classic Standard Room",
     type: "Standard",
     price: 45000,
@@ -66,7 +82,7 @@ function ariRenderRooms(rooms) {
           data-price="${room.price}"
           data-image="${room.img}"
         >
-          Add to Cart
+          Book Now
         </button>
       </div>
     </div>
