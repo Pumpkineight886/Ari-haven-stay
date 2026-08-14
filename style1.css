@@ -54,23 +54,40 @@ body {
   height: auto;
 }
 
-/* Navbar Links */
+/* =========================
+   Navigation Links
+   ========================= */
+
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 5px;
   font-size: 18px;
   list-style: none;
   margin: 0 auto;
 }
-
-.nav-links a {
-  color: var(--hs-gold);
-  text-decoration: none;
+.nav-links a{
+    position: relative;
+    color: var(--hs-gold);
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 999px;
+    transition: all .3s ease;
 }
 
-.nav-links a:hover {
-  color: gold;
+/* Hover */
+
+.nav-links a:hover{
+    background: rgba(201,162,75,.12);
+    color:#fff;
+}
+
+/* Active Page */
+
+.nav-links a.active{
+    background: rgba(201,162,75,.16);
+    color:#fff;
+    border:1px solid rgba(201,162,75,.45);
 }
 
 /* Sign In Link */
@@ -362,14 +379,25 @@ body {
 }
 
 .feature-tag {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  font-size: 13px;
+  gap: 8px;
+
+  font-size: 16px;
+  font-weight: 900;
   letter-spacing: 1px;
   text-transform: uppercase;
   color: var(--hs-gold);
-  margin-bottom: 12px;
+
+  background: rgba(11, 37, 69, 0.75);   /* Dark navy */
+  padding: 10px 18px;
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 999px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  margin-bottom: 16px;
 }
 
 .feature-card h3 {
@@ -1130,10 +1158,7 @@ body {
   display: none;
 }
 
-.welcome-user {
-  color: var(--color-gold);
-  font-weight: 600;
-}
+
 
 #register-panel {
   display: none;
@@ -1479,7 +1504,9 @@ body {
   color: #fff;
   font-size: 15px;
 }
-
+.welcome-user i{
+  margin-right: 8px;
+}
 .cart-link {
   position: relative;
   color: var(--hs-gold);
@@ -1801,6 +1828,11 @@ body {
   line-height: 1.5;
 }
 
+@media (max-width:768px){
+    .page-hero{
+        min-height:100vh;
+    }
+}
 
 /* =========================
    Dining Intro Card
@@ -2268,6 +2300,7 @@ body {
     padding:14px 34px;
     border-radius:50px;
     transition:.3s ease;
+    text-decoration: none;
 }
 
 .menu-btn:hover{
@@ -3834,7 +3867,6 @@ body {
   overflow-y: hidden;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
-
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
@@ -4552,7 +4584,9 @@ body.ari-lightbox-open {
   }
 
   .ari-about-image img {
-    height: 320px;
+    height: 420px;
+    width: 100%;
+    object-fit: cover;
   }
 
   .ari-about-checklist {
@@ -4700,16 +4734,29 @@ body.ari-lightbox-open {
 }
 
 .ari-cart-empty {
-  text-align: center;
-  max-width: 480px;
-  margin: 0 auto;
+    max-width: 480px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .ari-cart-empty p {
-  color: #6b6b6b;
-  margin-bottom: 24px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 24px;
 }
 
+.empty-cart-link{
+    display: inline-block;
+    color: var(--color-green);
+    font-weight: 600;
+    text-decoration: none;
+
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
 
 /* =========================
    Cart Sidebar
@@ -4826,21 +4873,26 @@ body.ari-lightbox-open {
    ========================= */
 
 .ari-checkout-btn {
-  display: block;
-  width: 100%;
-  text-align: center;
-  border: none;
-  background: var(--hs-gold);
-  color: var(--hs-navy);
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 15px;
-  padding: 15px;
-  border-radius: 999px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background 0.2s ease, transform 0.15s ease;
-  margin-top: 8px;
+    display: block;
+    width: min(320px, 100%);
+    margin: 0;
+    max-width: 100%;   /* Controls the button width */
+
+    box-sizing: border-box;
+
+    padding: 15px;
+    border: none;
+    border-radius: 999px;
+
+    background: var(--hs-gold);
+    color: var(--hs-navy);
+
+    text-align: center;
+    text-decoration: none;
+
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .ari-checkout-btn:hover {
@@ -4848,30 +4900,52 @@ body.ari-lightbox-open {
   transform: translateY(-1px);
 }
 
+@media (max-width:768px){
 
+    .ari-cart-empty-wrap{
+        padding:80px 0px;
+    }
+
+    .ari-cart-empty{
+        max-width:400px;
+        margin:0 auto;
+        text-align:center;
+    }
+
+    .ari-checkout-btn{
+        display:block;
+        width:80%;
+        box-sizing:border-box;
+        margin-top:20px;
+    }
+
+}
 /* =========================
    Cart Layout - Tablet
    ========================= */
 
 @media (max-width: 900px) {
-  .ari-cart-layout {
-    grid-template-columns: 1fr;
-  }
 
-  .ari-cart-sidebar {
-    position: static;
-  }
+    .ari-cart-layout{
+        grid-template-columns: 1fr;
+        padding: 0 16px;
+        gap: 24px;
+    }
 
-  .ari-cart-item {
-    flex-wrap: wrap;
-  }
+    .ari-cart-sidebar{
+        position: static;
+    }
 
-  .ari-cart-item-total {
-    align-items: flex-start;
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+    .ari-cart-item{
+        flex-wrap: wrap;
+    }
+
+    .ari-cart-item-total{
+        align-items: flex-start;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 }
 
 
@@ -4910,7 +4984,7 @@ body.ari-lightbox-open {
 
 @media (max-width: 700px) {
   .page-hero {
-    min-height: 34vh;
+    min-height: 75vh;
   }
 
   .page-hero h1 {
@@ -5073,7 +5147,7 @@ body.ari-lightbox-open {
 
 /* Tablet */
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   :root {
     --navbar-height: 90px;
     --searchbox-top: 120px;

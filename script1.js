@@ -1,3 +1,22 @@
+/* =====================================================
+   Active Navigation Link
+   ===================================================== */
+
+const currentPage = window.location.pathname.split("/").pop();
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    const href = link.getAttribute("href");
+
+    if (
+        href === currentPage ||
+        (currentPage === "" && href === "index.html")
+    ) {
+        link.classList.add("active");
+    }
+
+});
+
 //Explore Section
 const exploreData = {
   poolside: [
@@ -93,7 +112,7 @@ const offersData = [
   { title: "Earn up to 5,000 Bonus Points per Stay", img: "assets/offer-3.jpg" },
   { title: "Free Breakfast on Weekend Getaways", img: "assets/offer-4.avif" },
   { title: "3 Nights for the Price of 2", img: "assets/offer-5.avif" },
-  { title: "Spa Credit With Every Suite Booking", img: "assets/offer-6.jpg" }
+  { title: "Spa Credit With Every Suite Booking", img: "assets/spa-image2.jpg" }
 ];
 
 const track = document.getElementById("offersTrack");
@@ -101,12 +120,23 @@ const dotsWrap = document.getElementById("offersDots");
 const prevBtn = document.getElementById("prevArrow");
 const nextBtn = document.getElementById("nextArrow");
 
-if (track && dotsWrap && prevBtn && nextBtn) {
-  let currentIndex = 0;
-  let visibleCards = 3;
-  let maxIndex = 0;
+  if (track && dotsWrap && prevBtn && nextBtn) {
+    let currentIndex = 0;
+    let visibleCards = getVisibleCards();
+    let maxIndex = 0;
+
+  function getVisibleCards() {
+    if (window.innerWidth <= 768) {
+      return 1;
+    }
+    if (window.innerWidth <= 1024) {
+      return 2;
+    }
+    return 3;
+  }
 
   function renderOffers() {
+    visibleCards = getVisibleCards();
     track.innerHTML = offersData.map(offer => `
       <div class="offer-card" style="background-image: url('${offer.img}')">
         <div class="offer-content">
@@ -149,7 +179,15 @@ if (track && dotsWrap && prevBtn && nextBtn) {
 
   prevBtn.addEventListener("click", () => goTo(currentIndex - 1));
   nextBtn.addEventListener("click", () => goTo(currentIndex + 1));
-  window.addEventListener("resize", updateSlider);
+  window.addEventListener("resize", () => {
+      const oldVisibleCards = visibleCards;
+      visibleCards = getVisibleCards();
+      if (oldVisibleCards !== visibleCards) {
+          renderOffers();
+          currentIndex = Math.min(currentIndex, maxIndex);
+      }
+      updateSlider();
+  });
 
   renderOffers();
   updateSlider();
@@ -254,6 +292,15 @@ function showToast(message) {
     cartCountEl.style.display = count > 0 ? "inline-block" : "none";
     cartCountEl.textContent = count;
 }*/
+
+/*Shows a short popup message at the bottom of the screen.*/
+function showToast(message) {
+  const toast = document.getElementById("toast");
+  if (!toast) return;
+  toast.textContent = message;
+  toast.classList.add("show");
+  setTimeout(() => toast.classList.remove("show"), 2500);
+}
 
 /* ------------------------------------------------------------
    3. ADD TO CART
